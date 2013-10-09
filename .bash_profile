@@ -62,3 +62,6 @@ export PROMPT_COMMAND='history -a'
 export ORACLE_VERSION="10.2.0.5"
 export ORACLE_HOME="/usr/lib/oracle/$ORACLE_VERSION/client64"
 export PATH=$PATH:"$ORACLE_HOME/bin"
+
+# http://superuser.com/questions/310914/permanently-change-date-time-format-for-ls
+export TIME_STYLE=long-iso
