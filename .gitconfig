@@ -1,0 +1,36 @@
+[user]
+	name = Roman Frołow
+	email = rofrol@gmail.com
+[core]
+	editor = vim
+[color]
+	diff = auto
+	status = auto
+[alias]
+	#https://git.wiki.kernel.org/index.php/Aliases
+	#http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
+	#http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
+	#https://coderwall.com/p/euwpig
+	# git -c color.status=always status | less -R -F
+	st = status -s
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	dc = diff --cached
+	#default git log short
+	#git log --oneline --decorate
+	ls = log --date=iso --pretty=format:"%C(yellow)%h%Creset\\ %ci\\%C(red)%d\\ %Creset%s%Cblue\\ <%cn>" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %ci\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lutchidden = log --date=local --pretty=format:"%C(yellow)%h%Creset\\ %cd\\ %C(red)%d\\ %Creset%s%Cblue\\ <%cn>" --decorate
+	lutc = !TZ=UTC git lutchidden
+	lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	lg3 = log --format='%Cred%h%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset%C(yellow)%d%Creset' --no-merges
+	lg = !"git lg1"
+	#to see changed lines
+	#git lg -p
+	type = cat-file -t
+	dump = cat-file -p
+	alias = "!sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1' -"
+	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
