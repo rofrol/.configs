@@ -107,19 +107,49 @@ nnoremap <F1> za
 onoremap <F1> <C-C>za
 vnoremap <F1> zf
 " }}}
+" Syntastic {{{
+" Syntax checkers with plugins for architecture for many langs
+Bundle 'scrooloose/syntastic'
+" :he syntastic
+" http://blog.thomasupton.com/2012/05/syntastic/
+" To get actual settings
+" :SyntasticInfo
+" To navigate on errors list, enter on element to jump there
+" :Errors
+" Next error :lnext
+" Prev error :lprev
+
+" By default, the location list is changed only when you run the :Errors
+" command, in order to minimise conflicts with other plugins. Set this if you want the
+" location list to always be updated when you run the checkers
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_check_on_open=1 " check on open
+let g:syntastic_enable_signs=1 " marks on left showing errors, warnings
+" }}}
 " Python {{{
 " http://sudoers-d.com/blog/2013/01/18/installing-vim-on-centos-6-dot-3/
 " https://gist.github.com/cfddream/1150782
-" Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'hynek/vim-python-pep8-indent'
 " or this http://www.vim.org/scripts/script.php?script_id=3461
-Bundle 'klen/python-mode'
+"Bundle 'klen/python-mode'
+
+" Sytnastic
+" pip install flake8
+let g:syntastic_python_checkers = ['flake8']
+" ~/.config/flake8
+" http://flake8.readthedocs.org/en/latest/config.html
 
 " http://stackoverflow.com/questions/16570737/auto-indent-doesnt-work-when-using-vim-coding-python
 " http://stackoverflow.com/questions/65076/how-to-setup-vim-autoindentation-properly-for-editing-python-files-py
 " http://stackoverflow.com/questions/1675688/make-vim-show-all-white-spaces-as-a-character
 set cindent
-autocmd FileType python setl ts=4 sts=4 sw=4 tw=0 wm=0 sta noet list lcs=eol:\ ,tab:·\ 
-	\ cinwords=if,elif,else,for,while,try,except,finally,def,class fdm=indent foldignore= foldnestmax=2 foldlevelstart=0
+" tabs
+"autocmd FileType python setl ts=4 sts=4 sw=4 tw=0 wm=0 sta noet
+" spaces
+autocmd FileType python setl expandtab
+autocmd FileType python setl tw=160 wm=5 fo=cqt list lcs=eol:\ ,tab:·\ 
+	\ cinwords=if,elif,else,for,while,try,except,finally,def,class
+	\ fdm=indent foldignore= foldnestmax=2 foldlevelstart=0
 " }}}
 " Backup {{{
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
