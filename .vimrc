@@ -54,6 +54,46 @@ set wildignore=*.o,*~,*.pyc,*.class,*.swp
 " Super useful when editing files in the same directory
 map <F3> :tabedit <c-r>=expand("%:p:h")<cr><cr>
 
+set acd
+
+" }}}
+" Vundle {{{
+" https://github.com/gmarik/vundle
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" vim-scripts repos
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (ie. when working on your own plugin)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
 " }}}
 " Folding {{{
 " zR to open all folds
@@ -68,13 +108,15 @@ onoremap <F1> <C-C>za
 vnoremap <F1> zf
 " }}}
 " Python {{{
-" http://www.vim.org/scripts/script.php?script_id=3461
+Bundle 'hynek/vim-python-pep8-indent'
+" or this http://www.vim.org/scripts/script.php?script_id=3461
+
 " http://stackoverflow.com/questions/16570737/auto-indent-doesnt-work-when-using-vim-coding-python
 " http://stackoverflow.com/questions/65076/how-to-setup-vim-autoindentation-properly-for-editing-python-files-py
 " http://stackoverflow.com/questions/1675688/make-vim-show-all-white-spaces-as-a-character
 set cindent
 autocmd FileType python setl ts=4 sts=4 sw=4 tw=0 wm=0 sta noet list lcs=eol:\ ,tab:·\ 
-	\ cinwords=if,elif,else,for,while,try,except,finally,def,class fdm=indent foldignore= foldnestmax=1 foldlevelstart=0
+	\ cinwords=if,elif,else,for,while,try,except,finally,def,class fdm=indent foldignore= foldnestmax=2 foldlevelstart=0
 " }}}
 " Backup {{{
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
@@ -103,45 +145,6 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | d
 set wrap
 " this turns off physical line wrapping (ie: automatic insertion of newlines)
 set textwidth=0 wrapmargin=0
-" }}}
-" Vundle {{{
-" https://github.com/gmarik/vundle
-set nocompatible               " be iMproved
-filetype off                   " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (ie. when working on your own plugin)
-"Bundle 'file:///Users/gmarik/path/to/plugin'
-Bundle 'hynek/vim-python-pep8-indent'
-
-
-filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
 " }}}
 " Colors {{{
 "http://itszero.github.io/blog/2012/04/19/the-solarized-dark-vim/
