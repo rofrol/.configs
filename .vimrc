@@ -108,8 +108,11 @@ onoremap <F1> <C-C>za
 vnoremap <F1> zf
 " }}}
 " Python {{{
-Bundle 'hynek/vim-python-pep8-indent'
+" http://sudoers-d.com/blog/2013/01/18/installing-vim-on-centos-6-dot-3/
+" https://gist.github.com/cfddream/1150782
+" Bundle 'hynek/vim-python-pep8-indent'
 " or this http://www.vim.org/scripts/script.php?script_id=3461
+Bundle 'klen/python-mode'
 
 " http://stackoverflow.com/questions/16570737/auto-indent-doesnt-work-when-using-vim-coding-python
 " http://stackoverflow.com/questions/65076/how-to-setup-vim-autoindentation-properly-for-editing-python-files-py

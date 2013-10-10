@@ -37,6 +37,9 @@ export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/projects/go
 
 export PYTHONPATH=$HOME/pythonpath
+# http://stackoverflow.com/questions/10624511/upgrade-python-without-breaking-yum/10624568#10624568
+# cd /usr/local/bin && ln -s python2.7 python
+export PATH=/usr/local/bin:$PATH
 
 # http://linuxcommando.blogspot.ie/2007/10/grep-with-color-output.html
 export GREP_OPTIONS='--color=auto'
