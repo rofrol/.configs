@@ -14,4 +14,5 @@ for user in "$@"; do
 	# Add .[!.]* after * if you have dot files in the topmost directory,
 	# and ..?* if you have file names beginning with two dots.
 	rsync -azv --include-from 'include.txt' --exclude '*' ~/.[!.]* ${user}@${host}:
+	ssh ${user}@${host} 'sh ~/.configs/install.sh'
 done
