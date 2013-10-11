@@ -1,3 +1,4 @@
+# 0. set hostname like http://www.rackspace.com/knowledge_center/article/centos-hostname-change
 # 1. ssh-keygen -t rsa (enter, enter ...)
 # 2. ssh-copy-id ${user}@${ip}
 # 3. ./<script_name> ip user1 user2
