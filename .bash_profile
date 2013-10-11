@@ -9,26 +9,12 @@ fi
 export SVN_EDITOR=vim
 export HISTSIZE=10000
 
-#export LANG="en_IE.UTF-8"
-#export LC_CTYPE="en_IE.UTF-8"
-#export LC_NUMERIC="en_IE.UTF-8"
-#export LC_TIME="en_IE.UTF-8"
-#export LC_COLLATE="en_IE.UTF-8"
-#export LC_MONETARY="en_IE.UTF-8"
-#export LC_MESSAGES="en_IE.UTF-8"
-#export LC_PAPER="en_IE.UTF-8"
-#export LC_NAME="en_IE.UTF-8"
-#export LC_ADDRESS="en_IE.UTF-8"
-#export LC_TELEPHONE="en_IE.UTF-8"
-#export LC_MEASUREMENT="en_IE.UTF-8"
-#export LC_IDENTIFICATION="en_IE.UTF-8"
-
 export PATH=$PATH:$HOME/bin
 
 # should be before path, so svn wrapper can work
 export PATH=$HOME/svn-tools:$PATH
 
-export PATH=$PATH:$HOME/svn/tools
+export PATH=$PATH:$HOME/svn/iotools
 
 export SQLPATH=$HOME/.sqlplus
 
