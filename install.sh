@@ -1,4 +1,4 @@
-[ -d ~/.config ] || mkdir ~/.config
+mkdir -p ~/.config
 ln -sf ~/.configs/.vimrc ~
 ln -sf ~/.configs/.gitconfig ~
 ln -sf ~/.configs/.bash_profile ~
