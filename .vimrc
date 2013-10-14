@@ -58,7 +58,6 @@ set acd
 
 " http://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
 map <C-e> :ene<CR>:bd #<CR>
-
 " }}}
 " Vundle {{{
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -154,6 +153,20 @@ autocmd FileType python setl expandtab
 autocmd FileType python setl tw=160 wm=5 fo=cqt list lcs=eol:\ ,tab:·\ 
 	\ cinwords=if,elif,else,for,while,try,except,finally,def,class
 	\ fdm=indent foldignore= foldnestmax=2 foldlevelstart=0
+" }}}
+" Bash {{{
+" set syntax highlighting default to bash for ft=sh
+" http://stackoverflow.com/questions/7450395/vim-inconsistently-syntax-highlighting-bash-files
+let g:is_bash=1
+
+" for some file vim set ft=conf instead of sh
+" http://stackoverflow.com/questions/8890668/how-to-make-vim-detect-filetype-from-shebang-line
+if did_filetype()
+    finish
+endif
+if getline(1) =~# '^#!.*/bin/env\s\+bash\>'
+    setfiletype sh
+endif
 " }}}
 " Backup {{{
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
