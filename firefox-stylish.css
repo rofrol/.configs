@@ -1,0 +1,53 @@
+/*
+ * https://github.com/JasonBarnabe/stylish/wiki/Applying-styles-to-specific-sites
+ * http://stackoverflow.com/questions/10548472/trouble-getting-a-stylish-code-to-be-page-or-domain-specific-in-firefox/10548845#10548845
+ * http://superuser.com/questions/463153/disable-stylish-on-certain-sites-in-firefox
+ */
+@-moz-document regexp('https?://(?!(mail\\.google\\.com|bugzilla\\.mozilla\\.org)).*') {
+* {
+        background-image: none !important;
+}
+}
+
+@-moz-document regexp('https?://mail\\.google\\.com/.*') {
+.G-atb .T-I-ax7 {
+   background-image: none !important;
+}
+#gbqfb {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+#gbqfqw {
+    border: none !important;
+}
+.T-I-KE {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+}
+
+
+@-moz-document regexp('http.*') {
+* {
+    background-color: #002B36 !important;
+    color: #839496 !important;
+}
+a, a * {
+    color: #268BD2 !important;
+}
+a:visited, a:visited * {
+    color: #6C71C4 !important;
+}
+a:active, a:active * {
+    color: #DC322F !important;
+}
+
+a:hover, a:hover * {
+    color: #FDF6E3 !important;
+}
+
+input {
+    border: 1px solid #839496 !important;
+}
+}
+
