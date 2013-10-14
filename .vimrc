@@ -57,7 +57,7 @@ map <F3> :tabedit <c-r>=expand("%:p:h")<cr><cr>
 set acd
 
 " http://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
-map <C-e> :ene<CR>:bd #<CR>
+map <C-d> :bp<bar>sp<bar>bn<bar>bd<CR>
 " }}}
 " Vundle {{{
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle

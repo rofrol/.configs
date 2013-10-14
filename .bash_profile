@@ -22,7 +22,7 @@ shopt -s checkwinsize
 export PATH=$PATH:$HOME/bin
 
 # should be before path, so svn wrapper can work
-export PATH=$HOME/svn-tools:$PATH
+export PATH=$HOME/bin/svn-tools:$PATH
 
 export PATH=$PATH:$HOME/svn/iotools
 
