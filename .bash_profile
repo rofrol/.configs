@@ -8,6 +8,16 @@ fi
 
 export SVN_EDITOR=vim
 export HISTSIZE=10000
+export HISTFILESIZE=2000
+# enable the writing of history on the fly, rather than on logout by editing your ~/.bashrc and adding:
+# http://superuser.com/questions/649884/clear-terminal-output-of-last-command-only/649891#649891
+shopt -s histappend
+export PROMPT_COMMAND='history -a'
+HISTCONTROL=ignoredups:ingorespace
+
+# to make sure terminals wrap lines correctly after resizing them.
+# https://twitter.com/bashtips/status/3779483133
+shopt -s checkwinsize
 
 export PATH=$PATH:$HOME/bin
 
@@ -41,11 +51,6 @@ unset SSH_ASKPASS
 
 # http://stackoverflow.com/questions/3777075/ssl-certificate-rejected-trying-to-access-github-over-https-behind-firewall/4454754#4454754
 export GIT_SSL_NO_VERIFY=true
-
-# enable the writing of history on the fly, rather than on logout by editing your ~/.bashrc and adding:
-# http://superuser.com/questions/649884/clear-terminal-output-of-last-command-only/649891#649891
-shopt -s histappend
-export PROMPT_COMMAND='history -a'
 
 # https://gist.github.com/hangtwenty/5547377
 export ORACLE_VERSION="10.2.0.5"
