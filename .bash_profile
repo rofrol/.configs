@@ -57,3 +57,5 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$ORACLE_HOME/lib"
 export TIME_STYLE=long-iso
 
 export EDITOR=vim
+
+[ -f ~/.bash_profile_custom ] && . ~/.bash_profile_custom
