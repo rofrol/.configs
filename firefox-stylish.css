@@ -69,8 +69,6 @@ input {
 }
 }
 
-@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
-
 .tabbrowser-tab .tab-icon-image {display:none!important;}
 
 /* doesn't work */
