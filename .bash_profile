@@ -66,5 +66,5 @@ export EDITOR=vim
 [ -f ~/.bash_profile_custom ] && . ~/.bash_profile_custom
 
 # get solarized colors for bash
-[ -f ~/.bash_profile_custom ] || wget https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark -O ~/.configs/dircolors.256dark
+[ -f ~/.configs/dircolors.256dark ] || wget https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark -O ~/.configs/dircolors.256dark
 eval `dircolors ~/.configs/dircolors.256dark`
