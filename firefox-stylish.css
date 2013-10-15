@@ -32,8 +32,9 @@
     background-color: #002B36 !important;
     color: #839496 !important;
 }
-a, a * {
-    color: #268BD2 !important;
+a, a *, a:link, a:link * {
+    color: #FDF6E3 !important;
+    text-decoration: none !important;
 }
 a:visited, a:visited * {
     color: #6C71C4 !important;
@@ -44,6 +45,7 @@ a:active, a:active * {
 
 a:hover, a:hover * {
     color: #FDF6E3 !important;
+    text-decoration: underline !important;
 }
 
 input {
@@ -51,3 +53,31 @@ input {
 }
 }
 
+@-moz-document regexp('http.*facebook.com/.*') {
+#pageLogo {
+    visibility: hidden !important;
+}
+
+}
+
+
+@-moz-document url("about:newtab") {
+
+#scrollbox, #newtab-scrollbox {
+    color: #839496 !important;
+    background-color: #002B36 !important;
+}
+}
+
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+.tabbrowser-tab .tab-icon-image {display:none!important;}
+
+/* doesn't work */
+#page-proxy-favicon[src*="*.ico"]{background-image:url("")!important;height:16px!important;padding-left:16px!important;width:0!important}
+tab[image*="https://fbstatic-a.akamaihd.net/rsrc.php/yl/r/H3nktOa7ZMg.ic"]>image{background-image:url("newfavicon.png")!important}
+
+/*
+http://forum.userstyles.org/discussion/619/remove-favicon-from-urladdresslocation-bar/p1
+http://forum.userstyles.org/discussion/2387/change-favicon-on-site/p1
+*/
