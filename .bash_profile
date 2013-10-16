@@ -71,5 +71,9 @@ eval `dircolors ~/.configs/dircolors.256dark`
 
 # based on https://raw.github.com/nkulikov/mc-solarized-skin/master/solarized.ini
 # improved lines and marked bg to gray
-cd && git clone https://github.com/rofrol/mc-solarized-skin
+if [ -d $HOME/mc-solarized-skin ]; then
+	cd $HOME/mc-solarized-skin && git pull && cd -
+else
+	git clone https://github.com/rofrol/mc-solarized-skin $HOME/mc-solarized-skin
+fi
 export MC_SKIN=$HOME/mc-solarized-skin/solarized.ini
