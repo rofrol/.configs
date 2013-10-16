@@ -168,6 +168,13 @@ if getline(1) =~# '^#!.*/bin/env\s\+bash\>'
     setfiletype sh
 endif
 " }}}
+" Go {{{
+filetype off
+filetype plugin indent off
+set runtimepath+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
+" }}}
 " Backup {{{
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
