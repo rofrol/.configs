@@ -60,14 +60,15 @@ input {
 
 }
 
-
-@-moz-document url("about:newtab") {
-
-#scrollbox, #newtab-scrollbox {
+@-moz-document url("about:blank"), url("about:newtab") {
+* {
     color: #839496 !important;
     background-color: #002B36 !important;
 }
 }
+
+/* blank page during loading http://forums.mozillazine.org/viewtopic.php?p=5815275#p5815275 */
+browser { background-color: #002B36 !important; }
 
 .tabbrowser-tab .tab-icon-image {display:none!important;}
 

@@ -68,3 +68,7 @@ export EDITOR=vim
 # get solarized colors for bash
 [ -f ~/.configs/dircolors.256dark ] || wget https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark -O ~/.configs/dircolors.256dark
 eval `dircolors ~/.configs/dircolors.256dark`
+
+# based on https://raw.github.com/nkulikov/mc-solarized-skin/master/solarized.ini
+# improved lines and marked bg to gray
+export MC_SKIN=$HOME/.configs/solarized.ini
