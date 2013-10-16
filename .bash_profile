@@ -28,7 +28,7 @@ export PATH=$PATH:$HOME/svn/iotools
 
 export SQLPATH=$HOME/.sqlplus
 
-export GOROOT=$HOME/go
+export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/projects/go
 
