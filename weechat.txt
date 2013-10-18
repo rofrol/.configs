@@ -26,6 +26,9 @@ alt + left/right arrows (or F5/F6): switch to previous/next buffer
 F11/F12: scroll nicklist
 page up/down: scroll text in current buffer
 
+#to get key binding and representation
+alt+k press key
+
 == Ignore
 
 /ignore add somenick freenode #somechat
@@ -51,6 +54,7 @@ http://www.weechat.org/files/doc/weechat_faq.en.html#ignore_vs_filter
 
 == Filter nicks
 /filter add exherbo_bots irc.freenode.#exherbo nick_zebrapig,nick_gerritwk*,nick_irker* *
+/key bind meta2-12~ /filter toggle exherbo_bots
 
 == Smart filter
 
