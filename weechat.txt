@@ -44,8 +44,9 @@ http://www.weechat.org/files/doc/weechat_faq.en.html#ignore_vs_filter
 /set irc.look.smart_filter on
 /filter add irc_smart * irc_smart_filter *
 /filter add joinquit * irc_join,irc_part,irc_quit *
-#filter nicks, cause they are displayed on the right
-/set irc.look.display_join_message "326"
+#filter nicks (366), cause they are displayed on the right
+/set irc.look.display_join_message "332,333,329"
+/filter add irc_join_topic_date * irc_332,irc_333,irc_329 *
 
 == Filter nicks
 /filter add exherbo_bots irc.freenode.#exhebo nick_zebrapig,nick_gerritwk23,nick_irker225 *
