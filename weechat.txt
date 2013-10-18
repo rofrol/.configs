@@ -137,3 +137,8 @@ on #weechat
 #nicks on the right
 /set weechat.bar.nicklist.size 15
 /set weechat.bar.nicklist.size_max 15
+
+== Interactive option setting - iset
+
+/script install iset.pl
+/iset
