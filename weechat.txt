@@ -128,3 +128,12 @@ on #weechat
 15:03:36     @FlashCode | not the same as chat, no
 15:03:43     @FlashCode | because it's read from log files, which have no colors
 15:03:52     @FlashCode | and no tags (many colors are found using tags)
+
+== Columns
+
+#nicks on the left
+/set weechat.look.prefix_align_min 15
+/set weechat.look.prefix_align_max 15
+#nicks on the right
+/set weechat.bar.nicklist.size 15
+/set weechat.bar.nicklist.size_max 15
