@@ -163,3 +163,14 @@ Esc Enter
 to enter the color name.
 
 http://pascalpoitras.com/2013/06/14/improve-weechat-by-using-script-iset/
+
+
+more
+
+/iset freenode
+
+unset
+alt+iu
+
+If something goes wrong and you see no options:
+/iset *
