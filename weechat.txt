@@ -142,3 +142,24 @@ on #weechat
 
 /script install iset.pl
 /iset
+
+http://dev.weechat.org/post/2008/04/19/Script-iset
+
+
+to view the whole list of all the options with a value of ‘magenta’ or ‘lightmagenta’.
+/iset =magenta
+
+To show only magenta, not both, type :
+/iset ==magenta
+
+You can change the color! Either use :
+alt + +
+
+until you reach the desired color, or :
+alt + enter
+or this if alt+enter doesn't work
+Esc Enter
+
+to enter the color name.
+
+http://pascalpoitras.com/2013/06/14/improve-weechat-by-using-script-iset/
