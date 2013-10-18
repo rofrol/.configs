@@ -44,12 +44,13 @@ http://www.weechat.org/files/doc/weechat_faq.en.html#ignore_vs_filter
 /set irc.look.smart_filter on
 /filter add irc_smart * irc_smart_filter *
 /filter add joinquit * irc_join,irc_part,irc_quit *
-#filter nicks (366), cause they are displayed on the right
+#don't show nicks (366), cause they are displayed on the right
 /set irc.look.display_join_message "332,333,329"
+#filter all other
 /filter add irc_join_topic_date * irc_332,irc_333,irc_329 *
 
 == Filter nicks
-/filter add exherbo_bots irc.freenode.#exhebo nick_zebrapig,nick_gerritwk23,nick_irker225 *
+/filter add exherbo_bots irc.freenode.#exherbo nick_zebrapig,nick_gerritwk*,nick_irker* *
 
 == Smart filter
 
@@ -104,3 +105,22 @@ If yes, just follow these steps:
 2) bind help on F1: /key bind meta2-11~ /cmd_help  (tip: do alt+k then F1 to get the key code, which can be different in your terminal)
 3) type a command with or without arguments, then press F1 and enjoy!
 https://plus.google.com/102544516035551247301/posts/9qrG7ccBkmA
+
+== Solarized
+/set logger.color.backlog_line default
+
+on #weechat
+14:47:47         rofrol | I have some problem with colors after reconnecting
+14:47:52         rofrol | http://img41.imageshack.us/img41/3830/7x77.png
+14:48:12         rofrol | I'm using putty and solarized colors
+14:48:47         rofrol | in this screenshot you can see that I've selected lines, and it shows there is some text but the same color as background
+14:52:15     @FlashCode | rofrol: try to change the color for the backlog
+14:52:25     @FlashCode | for example, /set logger.color.backlog_line default
+14:52:34     @FlashCode | sometimes "darkgray" has a bad render
+14:52:51     @FlashCode | or if you have 256 colors, better use for example 240
+14:53:06     @FlashCode | I use 245 here
+15:03:10         rofrol | FlashCode: thanks, I can see text now.
+15:03:25         rofrol | FlashCode: Can I get this backlog colorized?
+15:03:36     @FlashCode | not the same as chat, no
+15:03:43     @FlashCode | because it's read from log files, which have no colors
+15:03:52     @FlashCode | and no tags (many colors are found using tags)
