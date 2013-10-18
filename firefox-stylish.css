@@ -33,8 +33,9 @@
     color: #839496 !important;
 }
 a, a *, a:link, a:link * {
-    color: #FDF6E3 !important;
+    color: #1C6EA0 !important;
     text-decoration: none !important;
+    border: none !important;
 }
 a:visited, a:visited * {
     color: #6C71C4 !important;
@@ -60,10 +61,12 @@ input {
 
 }
 
-@-moz-document url("about:blank"), url("about:newtab") {
+@-moz-document regexp("about:.*") {
 * {
     color: #839496 !important;
     background-color: #002B36 !important;
+    text-shadow: none !important;
+    background-image: none !important;
 }
 }
 

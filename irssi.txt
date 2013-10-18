@@ -1,0 +1,226 @@
+== Quickstart
+$ irssi
+/set autolog_path ~/.irssi/logs/$tag/$0/%Y-%m-%d.log
+/set autolog on
+/server add -auto -network fn irc.freenode.net
+/network add -nick user -autosendcmd "/msg nickserv IDENTIFY *******" fn
+/channel add -auto #exherbo fn
+/ignore * joins
+/ignore * parts
+/ignore * quits
+/save
+/quite
+
+https://wiki.archlinux.org/index.php/irssi
+http://pl.wikibooks.org/wiki/Irssi
+http://irssi.org/documentation/faq
+
+or better
+% /ignore * JOINS PARTS QUITS NICKS MODES
+% /ignore -channels * -regexp -pattern (away|gone|back|returned) * ACTIONS
+http://wiki.shellium.org/w/Irssi
+
+== utf-8
+
+/set term_charset utf-8
+
+http://quadpoint.org/articles/irssi/#utf8_in_irssi_and_screen
+
+== Keys
+
+To switch between servers press CTRL + X. To switch between windows / channels press ALT + number or use /window number
+alt+q for 11
+alt+w for 12 and so on.
+
+http://www.antonfagerberg.com/archive/my-perfect-irssi-setup/
+http://www.guckes.net/irssi/
+
+
+== Scripts
+mkdir -p ~/.irssi/scripts/autorun
+/help /script
+/script list
+/script load
+/run <script_name>
+/script unload
+
+=== Some favourites
+http://ossowicki.com/?p=102
+http://www.chrisjohnston.org/tech/my-favorite-irssi-scripts
+http://wouter.coekaerts.be/irssi
+
+=== autorun
+cd ~/.irssi/scripts/autorun
+ln -s ../scriptname.pl .
+
+http://pl.wikibooks.org/wiki/Irssi
+http://wouter.coekaerts.be/irssi
+
+== Spellcheck
+
+=== Aspell
+
+sudo perl -MCPAN -e 'install Text::Aspell'
+cd ~/.irssi/scripts
+wget http://scripts.irssi.org/scripts/aspell_complete.pl
+/run aspell_complete.pl
+
+cd autorun
+ln -s ../aspell_complete.pl .
+
+How the spelling functionality works is that you enter a word and then, before pressing spacebar, you hit the TAB key, whereon the preceding word will be spellchecked.
+
+http://bootpolish.net/pageloader.pl?page=home_howto_spellcheckinirssi
+http://www.mimir.ch/mimir/irssi/
+Another implementation? https://github.com/IsaacG/irssi-aspell
+https://gist.github.com/gamblore/5998024
+
+=== Ispell
+
+https://wiki.archlinux.org/index.php/irssi
+http://blog.schmichael.com/2008/11/05/spell-checking-in-irssi/
+
+
+== Usercount
+
+cd ~/.irssi/scripts
+wget http://scripts.irssi.org/scripts/usercount.pl
+cd autorun
+ln -s ../usercount.pl .
+/statusbar window add usercount
+#/statusbar window remove usercount
+/save
+
+== Hilight window
+
+Every time you get hilighted (someone types your nickname or any other higlighted word or sends you a private message) a copy of that message will be sent to a separate window.
+
+A great option is to display that window on the top of the terminal at all time. That way you’ll never miss a message.
+
+/window new split
+/window name hilight
+/window size 4
+
+wget http://scripts.irssi.org/scripts/hilightwin.pl
+cd autorun
+ln -s ../hilightwin.pl .
+/run hilightwin.pl
+/hilight -word yournick
+
+to save your layout settings and have irssi automatically recreate the split hilight window on startup.
+/layout save
+
+http://www.antonfagerberg.com/archive/my-perfect-irssi-setup/
+http://quadpoint.org/articles/irssi/#hilight_window
+http://quadpoint.org/articles/irssisplit/
+
+
+== Ignore
+
+/ignore -time 3600 <nick>
+
+to ignore <nick> for an hour.
+
+NOTICES       - Match NOTICE messages.
+SNOTES        - Match server notices.
+CTCPS         - Match CTCP messages.
+ACTIONS       - Match CTCP actions. i.e. /me sits
+JOINS         - Match join messages.
+PARTS         - Match part messages.
+QUITS         - Match quit messages.
+KICKS         - Match kick messages.
+MODES         - Match mode changes.
+TOPICS        - Match topic changes.
+WALLOPS       - Match wallops.
+INVITES       - Match invite requests.
+NICKS         - Match nickname changes.
+DCC           - DCC related messages.
+DCCMSGS       - Match DCC chat messages.
+CLIENTNOTICE  - Irssi's notices.
+CLIENTCRAP    - Miscellaneous irssi messages.
+CLIENTERROR   - Irssi's error messages.
+
+More about creating windows with some message levels
+http://wouter.coekaerts.be/irssi/wclf
+
+== Last
+
+/last receive 10
+
+Say i've just come back from a lecture, and i want to see was anyone talking about me while i was gone this shows me the last 10 lines in the current channel that contain my username.
+
+== Away
+
+Say you're going to a lecture, but you don't want to have to scroll back up and see if someone hilighted you when you weren't looking, you set irssi to /away with a message, to do this type
+
+/away gone to my lecture, back soon.
+
+When you come back type just /away and you'll see any hilights you might've picked up between you going and coming back.
+
+If you're lazy (like me), you can find loads of uses for the /alias command. Example: I like having the same away message all the time, and it's a bit long, so I made it into an /alias command by typing
+
+/alias awaymsg /away haus is off in the real world if you need to talk to him you can reach him on <phone_num>
+
+Now instead of typing the away message out everytime I can just type /awaymsg instead.
+
+http://wiki.redbrick.dcu.ie/mw/Irssi
+
+/WII yournick shows your away reason
+
+http://irssi.org/documentation/faq
+
+=== The right way
+
+No need for despair! IRC already has a working mechanism to state where you are. This command was named, maybe even too creatively, /AWAY.
+
+When Cathryn Casual goes, say, eating, she gives this command to her IRC client: /away eating. Thus, her away-message is "eating". When she comes back, she takes the away-status off simply by typing /away without parameters.
+
+When Sam Surfer wants to talk to Cathryn, he can check Cathryn's away-message by typing /whois cathryn. Then he gets a response such as this:
+
+    *** Cathryn (cathryn@ihku.nallukka.net)
+    ***  realname : Cathryn Casual
+    ***  channels : #nallukka
+    ***  server   : irc.song.fi (Song Networks, Finland)
+    ***  away     : eating
+    ***  idle     : 0 days 3 hours 31 mins 5 secs
+    *** End of WHOIS
+
+If the user you are trying to do a /whois on is on a different IRC server then you have to give the nickname twice to the /whois command in order to see both the idle time and the exact reason for being away. If you don't specify the name twice, you will only see "Gone" and no idle time. Many clients have the alias /wii for this, so you won't have to type the nickname twice.
+
+When /away is used properly, you can see a nice, simple listing of the channel status by typing /who #channel.
+
+    ***  #nallukka Miika_    H@  2  miika@karvainen.nallukka.net (Miika Aittala)
+    ***  #nallukka StarFire  G@  2  starfire@nallukka.net (Jussi Knuuttila)
+    ***  #nallukka Mutru     H@  0  mutru@ihku.nallukka.net (Otto Hilska)
+
+In the example listing, Miika_ and Mutru are present (H stands for here) whereas StarFire is away (G stands for gone).
+
+http://bisqwit.iki.fi/jutut/away.html
+
+=== Auto away with screen
+
+Another script to use together with Screen. It marks you as away when Screen detects that you are not active in the session.
+
+/set screen_away_active ON
+/set screen_away_message
+/set screen_away_nick
+
+Download: scripts.irssi.org/scripts/screen_away.pl
+
+http://www.antonfagerberg.com/archive/my-perfect-irssi-setup/
+
+== Personal quite message
+
+/set quit_message <my personal quit message>
+
+== config reload
+
+
+Here is the way to properly change your config on the fly:
+
+    Do "/set" commands first.
+    Then "/save" the current setup to the config file.
+    Edit your config file ("$EDITOR $HOME/.irssi/config")
+    "/reload" the configuration.
+
+http://www.guckes.net/irssi/

@@ -1,0 +1,15 @@
+http://micropipes.com/blog/2012/04/09/10-years-of-irssi-use-and-i-switched-to-weechat-last-weekend/
+
+== Quick Start
+
+/server add freenode chat.freenode.net/6697 -ssl
+/set irc.server.oftc.autoconnect on
+/set irc.server.oftc.nicks "rofrol"
+/set irc.server.oftc.username "rofrol"
+/set irc.server.oftc.realname "rofrol"
+/set irc.server.oftc.command "/msg nickserv identify xxxxxxx"
+/set irc.server.oftc.autojoin "#exherbo"
+/set irc.look.server_buffer independent
+
+http://www.weechat.org/files/doc/stable/weechat_quickstart.en.html
+https://wiki.archlinux.org/index.php/WeeChat
