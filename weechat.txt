@@ -157,8 +157,8 @@ alt + +
 
 until you reach the desired color, or :
 alt + enter
-or this if alt+enter doesn't work
-Esc Enter
+
+If it doesn't work try: Esc Enter or alt+ctrl+m or alt+ctrl+j
 
 to enter the color name.
 
