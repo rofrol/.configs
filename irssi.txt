@@ -224,3 +224,7 @@ Here is the way to properly change your config on the fly:
     "/reload" the configuration.
 
 http://www.guckes.net/irssi/
+
+== logrotate
+
+http://www.chovy.com/linux/logging-irssi-and-rotating-them-with-logrotate/

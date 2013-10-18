@@ -1,15 +1,105 @@
 http://micropipes.com/blog/2012/04/09/10-years-of-irssi-use-and-i-switched-to-weechat-last-weekend/
+http://blog.didrocks.fr/post/Moving-away-from-%28screen-irssi%29-to-%28bip-weechat%29
+http://pascalpoitras.com/2013/05/25/my-weechat-configuration/
+https://plus.google.com/communities/104181302778416960107
+http://weechat.org/files/doc/stable/weechat_user.en.html
 
 == Quick Start
 
 /server add freenode chat.freenode.net/6697 -ssl
-/set irc.server.oftc.autoconnect on
-/set irc.server.oftc.nicks "rofrol"
-/set irc.server.oftc.username "rofrol"
-/set irc.server.oftc.realname "rofrol"
-/set irc.server.oftc.command "/msg nickserv identify xxxxxxx"
-/set irc.server.oftc.autojoin "#exherbo"
+/set irc.server.freenode.autoconnect on
+/set irc.server.freenode.nicks "rofrol"
+/set irc.server.freenode.username "rofrol"
+/set irc.server.freenode.realname "rofrol"
+/set irc.server.freenode.command "/msg nickserv identify xxxxxxx"
+/set irc.server.freenode.autojoin "#exherbo"
 /set irc.look.server_buffer independent
+/save
+/connect freenode
 
 http://www.weechat.org/files/doc/stable/weechat_quickstart.en.html
 https://wiki.archlinux.org/index.php/WeeChat
+
+== Keys
+
+alt + left/right arrows (or F5/F6): switch to previous/next buffer
+F11/F12: scroll nicklist
+page up/down: scroll text in current buffer
+
+== Ignore
+
+/ignore add somenick freenode #somechat
+
+
+== What is the difference between the /ignore and /filter commands?
+
+The /ignore command is an IRC command, so it applies only for IRC buffers (servers and channels). It lets you ignore some nicks or hostnames of users for a server or channel (command will not apply on content of messages). Matching messages are deleted by IRC plugin before display (so you’ll never see them).
+
+The /filter command is a core command, so it applies to any buffer. It lets you filter some lines in buffers with tags or regular expression for prefix and content of line. Filtered lines are only hidden, not deleted, and you can see them if you disable filters (by default, the key Alt+= toggles filters).
+
+http://www.weechat.org/files/doc/weechat_faq.en.html#ignore_vs_filter
+
+== Filter
+
+/set irc.look.smart_filter on
+/filter add irc_smart * irc_smart_filter *
+/filter add joinquit * irc_join,irc_part,irc_quit *
+#filter nicks, cause they are displayed on the right
+/set irc.look.display_join_message "326"
+
+== Filter nicks
+/filter add exherbo_bots irc.freenode.#exhebo nick_zebrapig,nick_gerritwk23,nick_irker225 *
+
+== Smart filter
+
+A new smart filter for IRC join/part/quit message has been added. It is disabled by default (so you'll see all join/part/quit by default).
+
+To enable it, use following commands:
+/set irc.look.smart_filter on
+/filter add irc_smart * irc_smart_filter *
+
+You can setup delay: /set irc.look.smart_filter_delay 5
+How does it work?
+
+When a nick spoke on channel during past X minutes (where X is delay irc.look.smart_filter_delay), its join/part/quit will be displayed by default. Otherwise, if nick did not speak for a long time, all join/part/quit messages will be tagged with "irc_smart_filter". So you have to define a filter on this tag to hide join/part/quit from users that are not speaking on channel (see command above).o
+
+http://dev.weechat.org/post/2008/10/25/Smart-IRC-join-part-quit-message-filter
+
+== Smart filter 2
+
+Smart Filter
+First, we need to enable smart filters:
+
+/set irc.look.smart_filter "on"
+
+Next, we will create the sfilter alias:
+
+/alias sfilter filter add irc_smart_$server_$channel irc.$server.$channel irc_smart_filter *
+
+We can now type
+
+/sfilter
+
+in any buffer, and the smart filter will only be enabled for that buffer.
+
+The following alias will remove a previously enabled smart filter in the current buffer:
+Add the alias:
+
+/alias rmsfilter filter del irc_smart_$server_$channel
+
+and execute it by
+
+/rmsfilter
+
+https://wiki.archlinux.org/index.php/WeeChat
+
+== Disable save on exit
+/set weechat.look.save_config_on_exit off
+
+== Have you ever wondered what are the arguments for a command while you are typing it? For example /buffer, /window, /filter, /server, ...
+
+If yes, just follow these steps:
+1) /script install cmd_help.py
+2) bind help on F1: /key bind meta2-11~ /cmd_help  (tip: do alt+k then F1 to get the key code, which can be different in your terminal)
+3) type a command with or without arguments, then press F1 and enjoy!
+https://plus.google.com/102544516035551247301/posts/9qrG7ccBkmA
