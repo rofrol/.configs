@@ -160,6 +160,8 @@ alt + enter
 
 If it doesn't work try: Esc Enter or alt+ctrl+m or alt+ctrl+j
 
+Putty can use alt+enter for fullscreen. Check Putty > Configuration > Window > Behavior > Full screen on Alt-Enter
+
 to enter the color name.
 
 http://pascalpoitras.com/2013/06/14/improve-weechat-by-using-script-iset/
