@@ -185,9 +185,34 @@ set nowb
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 " }}}
-" Diff {{{
+" Colors and Diff {{{
+"http://itszero.github.io/blog/2012/04/19/the-solarized-dark-vim/
+"http://ethanschoonover.com/solarized/vim-colors-solarized
+Bundle 'altercation/vim-colors-solarized'
+if &t_Co >= 256 || has("gui_running")
+	set background=dark
+	colorscheme solarized
+endif
+
 " http://stackoverflow.com/questions/16840433/forcing-vimdiff-to-wrap-lines
 au VimEnter * if &diff | execute 'windo set wrap' | endif
+
+" There's some problem with solarized bg color in diff
+" http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff/2019401#2019401
+" au FilterWritePre * if &diff | colorscheme koehler | endif
+
+" http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff/11593961#11593961
+" http://stackoverflow.com/questions/6496778/vim-run-autocmd-on-all-filetypes-except
+fun! SetDiffColors()
+	if &diff
+		highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+		highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+		highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+		highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+	endif
+endfun
+
+au FilterWritePre * call SetDiffColors()
 " }}}
 " Search {{{
 set incsearch
@@ -202,15 +227,6 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | d
 set wrap
 " this turns off physical line wrapping (ie: automatic insertion of newlines)
 set textwidth=0 wrapmargin=0
-" }}}
-" Colors {{{
-"http://itszero.github.io/blog/2012/04/19/the-solarized-dark-vim/
-"http://ethanschoonover.com/solarized/vim-colors-solarized
-Bundle 'altercation/vim-colors-solarized'
-if &t_Co >= 256 || has("gui_running")
-	set background=dark
-	colorscheme solarized
-endif
 " }}}
 " History {{{
 set history=1000         " remember more commands and search history
