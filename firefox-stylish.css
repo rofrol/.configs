@@ -27,7 +27,7 @@
 }
 
 
-@-moz-document regexp('http.*//(?!(.*tektronix\\.net)).*') {
+@-moz-document regexp('http.*//(?!(.*tektronix\\.net|.*google\\.com/maps/|.*arantech\\.com)).*') {
 * {
     background-color: #002B36 !important;
     color: #839496 !important;
