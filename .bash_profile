@@ -44,7 +44,7 @@ export GREP_OPTIONS='--color=auto'
 #alias count='awk 'NR == 1 { for (i=1;i<=NF;i++) {printf i " "} print ""} {print}' | column -t'
 
 #alias m2p="rlwrap python2.7 $HOME/svn/tools/m2p.py"
-alias m2p="python2.7 $HOME/svn/tools/m2p.py"
+alias m2p="python $HOME/svn/iotools/m2p.py"
 
 # http://stackoverflow.com/questions/16077971/git-push-produces-gtk-warning
 unset SSH_ASKPASS
