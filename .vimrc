@@ -175,6 +175,11 @@ set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
 " }}}
+" XML {{{
+" http://www.jroller.com/lmchung/entry/xml_folding_with_vim
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
+" }}}
 " Backup {{{
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
@@ -246,8 +251,8 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
 "http://superuser.com/questions/111016/vim-open-file-at-location-that-was-last-viewed
 "http://stackoverflow.com/questions/13510406/vim-folder-listing-cant-reach
 "> http://vim.wikia.com/wiki/Make_views_automatic
-au BufWritePost,BufLeave,WinLeave ?* mkview
-au BufReadPre ?* silent loadview
+"au BufWritePost,BufLeave,WinLeave ?* mkview
+"au BufReadPre ?* silent loadview
 " }}}
 " Whitespace at EOL {{{
 " http://stackoverflow.com/questions/4617059/showing-trailing-spaces-in-vim
