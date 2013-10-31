@@ -53,8 +53,9 @@ http://www.weechat.org/files/doc/weechat_faq.en.html#ignore_vs_filter
 /filter add irc_join_topic_date * irc_332,irc_333,irc_329 *
 
 == Filter nicks
-/filter add exherbo_bots irc.freenode.#exherbo nick_zebrapig,nick_gerritwk*,nick_irker* *
-/key bind meta2-12~ /filter toggle exherbo_bots
+/filter add exherbo_bots irc.freenode.#exherbo,irc.freenode.#paludis nick_zebrapig,nick_gerritwk*,nick_irker* *
+/filter add exherbo_pqpd irc.freenode.#exherbo,irc.freenode.#paludis * ^!p(q|d)
+/key bind meta2-12~ /filter toggle exherbo_bots;/filter toggle exherbo_pqpd
 
 == Smart filter
 
