@@ -4,8 +4,7 @@
 [core]
 	editor = vim
 [color]
-	diff = auto
-	status = auto
+	ui = true
 [alias]
 	#https://git.wiki.kernel.org/index.php/Aliases
 	#http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/
@@ -16,6 +15,10 @@
 	ci = commit
 	br = branch
 	co = checkout
+	logo = log --oneline --decorate
+	logg = log --oneline --decorate --graph
+	logs = log --oneline --decorate --stat
+
 	df = diff
 	dc = diff --cached
 	#default git log short
@@ -32,9 +35,7 @@
 	#git lg -p
 	type = cat-file -t
 	dump = cat-file -p
-	alias = "!sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1' -"
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
 [push]
 	#default = simple
-[push]
 	default = matching
