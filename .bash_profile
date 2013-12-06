@@ -13,7 +13,7 @@ export HISTFILESIZE=2000
 # http://superuser.com/questions/649884/clear-terminal-output-of-last-command-only/649891#649891
 shopt -s histappend
 export PROMPT_COMMAND='history -a'
-HISTCONTROL=ignoredups:ingorespace
+HISTCONTROL=ignoreboth
 
 # to make sure terminals wrap lines correctly after resizing them.
 # https://twitter.com/bashtips/status/3779483133
@@ -29,8 +29,8 @@ export PATH=$PATH:$HOME/svn/iotools
 export SQLPATH=$HOME/.sqlplus
 
 export GOROOT=/usr/lib64/go
-export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/projects/go
+export PATH=$PATH:$GOPATH/bin
 
 export PYTHONPATH=$HOME/pythonpath
 # http://stackoverflow.com/questions/10624511/upgrade-python-without-breaking-yum/10624568#10624568
@@ -63,8 +63,6 @@ export TIME_STYLE=long-iso
 
 export EDITOR=vim
 
-[ -f ~/.bash_profile_custom ] && . ~/.bash_profile_custom
-
 # get solarized colors for bash
 [ -f ~/.configs/dircolors.256dark ] || wget https://raw.github.com/seebi/dircolors-solarized/master/dircolors.256dark -O ~/.configs/dircolors.256dark
 eval `dircolors ~/.configs/dircolors.256dark`
@@ -77,3 +75,7 @@ else
 	git clone https://github.com/rofrol/mc-solarized-skin $HOME/mc-solarized-skin
 fi
 export MC_SKIN=$HOME/mc-solarized-skin/solarized.ini
+
+[ -f ~/.bash_profile_custom ] && . ~/.bash_profile_custom
+
+export RUST_PATH=~/projects/rust
