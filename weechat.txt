@@ -17,6 +17,10 @@ http://weechat.org/files/doc/stable/weechat_user.en.html
 /save
 /connect freenode
 
+/server add mozilla irc.mozilla.org/6697 -ssl
+/set irc.server.mozilla.nicks "rofrol"
+/set irc.server.mozilla.autojoin "#rust"
+
 http://www.weechat.org/files/doc/stable/weechat_quickstart.en.html
 https://wiki.archlinux.org/index.php/WeeChat
 
