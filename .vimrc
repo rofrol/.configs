@@ -58,6 +58,37 @@ set acd
 
 " http://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
 map <C-d> :bp<bar>sp<bar>bn<bar>bd<CR>
+
+" Pokaz niekompletne paragrafy nawet jesli nie mieszcza sie na ekranie
+" (unikniemy znakow @)
+set display+=lastline
+
+if has("autocmd")
+  " http://people.smu.edu/jrobinet/howto/customize-vim.asp 
+  " Podczas edycji pliku zawsze przeskakuj do ostatniej znany pozycji kursora.
+  " Nie rob tego gdy pozycja jest bledna lub gdy wewnatrz uchwytu zdarzenia
+  " (zdarza sie podczas upuszczania pliku na gvim). 
+  autocmd BufReadPost * 
+    \ if line("'\"") > 0 && line("'\"") <= line("$") | 
+    \   exe "normal g`\"" | 
+    \ endif 
+endif " has("autocmd")
+
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+
+nmap <F5> :call LevelingDay()<CR>
+imap <F5> <C-o>:call LevelingDay()<CR>
+nmap <F6> :call LevelingEntry()<CR>
+imap <F6> <C-o>:call LevelingEntry()<CR>
 " }}}
 " Vundle {{{
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -85,6 +116,8 @@ Bundle 'gmarik/vundle'
 "Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (ie. when working on your own plugin)
 "Bundle 'file:///Users/gmarik/path/to/plugin'
+Bundle 'scrooloose/nerdtree'
+map <F5> :NERDTreeToggle<CR>
 
 
 filetype plugin indent on     " required!
@@ -122,12 +155,25 @@ Bundle 'scrooloose/syntastic'
 " Next error :lnext
 " Prev error :lprev
 
+":SyntasticToggleMode
+":SyntasticCheck
+let g:syntastic_mode_map = { 'mode': 'active',
+			   \ 'active_filetypes': ['ruby', 'php'],
+			   \ 'passive_filetypes': ['puppet'] }
+
+map <F4> :SyntasticToggleMode<CR>
+
 " By default, the location list is changed only when you run the :Errors
 " command, in order to minimise conflicts with other plugins. Set this if you want the
 " location list to always be updated when you run the checkers
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_check_on_open=1 " check on open
 let g:syntastic_enable_signs=1 " marks on left showing errors, warnings
+
+" https://github.com/scrooloose/syntastic/issues/542
+"let g:syntastic_enable_signs=0
+"let g:syntastic_echo_current_error=0
+"set nocuc nocul lazyredraw
 " }}}
 " Python {{{
 " http://sudoers-d.com/blog/2013/01/18/installing-vim-on-centos-6-dot-3/
@@ -137,22 +183,37 @@ Bundle 'hynek/vim-python-pep8-indent'
 "Bundle 'klen/python-mode'
 
 " Sytnastic
+" cave resolve pip -x
 " pip install flake8
-let g:syntastic_python_checkers = ['flake8']
+"let g:syntastic_python_checkers = ['flake8']
 " ~/.config/flake8
 " http://flake8.readthedocs.org/en/latest/config.html
 
 " http://stackoverflow.com/questions/16570737/auto-indent-doesnt-work-when-using-vim-coding-python
 " http://stackoverflow.com/questions/65076/how-to-setup-vim-autoindentation-properly-for-editing-python-files-py
 " http://stackoverflow.com/questions/1675688/make-vim-show-all-white-spaces-as-a-character
-set cindent
 " tabs
 "autocmd FileType python setl ts=4 sts=4 sw=4 tw=0 wm=0 sta noet
 " spaces
-autocmd FileType python setl expandtab
+" http://www.python.org/dev/peps/pep-0008/#indentation
+" Use 4 spaces per indentation level
+" sts - makes VIM see multiple space characters as tabstops, and so <BS> does
+" the right thing and will delete four spaces
+" http://www.vex.net/~x/python_and_vim.html
+"
+" smartindent has been replaced by cindent which "Works more cleverly",
+" although still mainly for languages with C-like syntax
+" http://stackoverflow.com/a/234578/588759
+autocmd FileType python setl expandtab cindent ts=4 sw=4 sts=4 ai
 autocmd FileType python setl tw=160 wm=5 fo=cqt list lcs=eol:\ ,tab:·\ 
 	\ cinwords=if,elif,else,for,while,try,except,finally,def,class
-	\ fdm=indent foldignore= foldnestmax=2 foldlevelstart=0
+	\ fdm=indent foldignore= foldnestmax=9 foldlevelstart=0
+" }}}
+" Ruby {{{
+autocmd FileType ruby setl expandtab cindent ts=4 sw=4 sts=4 ai
+autocmd FileType ruby setl tw=160 wm=5 fo=cqt list lcs=eol:\ ,tab:·\ 
+	\ cinwords=if,elif,else,for,while,try,except,finally,def,class
+	\ fdm=syntax foldignore= foldnestmax=10 foldlevelstart=0
 " }}}
 " Bash {{{
 " set syntax highlighting default to bash for ft=sh
@@ -174,9 +235,21 @@ filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
+autocmd FileType go setl ts=4 sw=4
+" }}}
+" Rust {{{
+Bundle 'wting/rust.vim'
+" because hercules ext is also rs
+au BufRead,BufNewFile *.rs,*.rc set filetype=rust
 " }}}
 " XML {{{
 " http://www.jroller.com/lmchung/entry/xml_folding_with_vim
+
+" http://vim.wikia.com/wiki/Forcing_Syntax_Coloring_for_files_with_odd_extensions
+" if the filetype was not detected at all
+au BufRead,BufNewFile *.xsd setfiletype xml
+" override any filetype which was already detected
+au BufRead,BufNewFile *.xsd set filetype=xml
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 " }}}
@@ -290,4 +363,28 @@ set statusline+=\ 0x%04B          "character under cursor
 " when terminal type is not xterm-256colors, then 7* would be gray
 hi statusline guifg=Black guibg=Cyan ctermfg=10 ctermbg=7
 
+" }}}
+" Leveling_up {{{
+" http://peterlyons.com/leveling_up
+" http://www.adp-gmbh.ch/vim/scripting/script_vars.html
+" http://vim.1045645.n5.nabble.com/What-do-I-need-to-read-to-understand-g-and-s-VIM-variable-prefixes-td5711600.html
+" To see list of options:
+" :he :s^D
+let s:h2 = "== "
+let s:h3 = "=== "
+
+function LevelingDay()
+  " http://vim.wikia.com/wiki/Insert_current_date_or_time
+  let date = strftime("%Y-%m-%d")
+  put=s:h2.'Day '.date
+  put=''
+  put=''
+endfunction
+
+function LevelingEntry()
+  let date = strftime("%Y-%m-%d %H:%M:%S %z")
+  put=s:h3.'Entry '.date
+  put=''
+  put=''
+endfunction
 " }}}
