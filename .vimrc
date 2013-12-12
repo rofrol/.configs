@@ -253,6 +253,11 @@ au BufRead,BufNewFile *.xsd set filetype=xml
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 " }}}
+" HTML {{{
+" http://stackoverflow.com/questions/19323607/html-indenting-not-working-in-compiled-vim-7-4-any-ideas
+let g:html_indent_inctags = "html,body,head,tbody"
+autocmd FileType html setl expandtab cindent ts=2 sw=2 sts=2 ai
+" }}}
 " Asciidoc {{{
 " Appendix E: Vim Syntax Highlighter http://www.methods.co.nz/asciidoc/userguide.html
 " https://github.com/dagwieers/asciidoc-vim
@@ -385,15 +390,15 @@ let s:h3 = "=== "
 function LevelingDay()
   " http://vim.wikia.com/wiki/Insert_current_date_or_time
   let date = strftime("%Y-%m-%d")
-  put=s:h2.date.' Day'
   put=''
+  put=s:h2.date.' Day'
   put=''
 endfunction
 
 function LevelingWork()
   let date = strftime("%Y-%m-%d %H:%M:%S %z")
+  put=''
   put=s:h3.date.' Work: '
-  put=''
-  put=''
+  normal! A
 endfunction
 " }}}
