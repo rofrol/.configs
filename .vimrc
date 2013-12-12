@@ -85,10 +85,10 @@ vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
-nmap <F5> :call LevelingDay()<CR>
-imap <F5> <C-o>:call LevelingDay()<CR>
-nmap <F6> :call LevelingEntry()<CR>
-imap <F6> <C-o>:call LevelingEntry()<CR>
+nmap <F6> :call LevelingDay()<CR>
+imap <F6> <C-o>:call LevelingDay()<CR>
+nmap <F7> :call LevelingWork()<CR>
+imap <F7> <C-o>:call LevelingWork()<CR>
 " }}}
 " Vundle {{{
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -253,6 +253,15 @@ au BufRead,BufNewFile *.xsd set filetype=xml
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 " }}}
+" Asciidoc {{{
+" Appendix E: Vim Syntax Highlighter http://www.methods.co.nz/asciidoc/userguide.html
+" https://github.com/dagwieers/asciidoc-vim
+autocmd BufRead,BufNewFile *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT,*.adoc
+        \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
+        \ textwidth=0 wrap formatoptions=tcqn
+        \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+
+        \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
+" }}}
 " Backup {{{
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
@@ -376,14 +385,14 @@ let s:h3 = "=== "
 function LevelingDay()
   " http://vim.wikia.com/wiki/Insert_current_date_or_time
   let date = strftime("%Y-%m-%d")
-  put=s:h2.'Day '.date
+  put=s:h2.date.' Day'
   put=''
   put=''
 endfunction
 
-function LevelingEntry()
+function LevelingWork()
   let date = strftime("%Y-%m-%d %H:%M:%S %z")
-  put=s:h3.'Entry '.date
+  put=s:h3.date.' Work: '
   put=''
   put=''
 endfunction
