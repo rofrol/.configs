@@ -64,14 +64,14 @@ map <C-d> :bp<bar>sp<bar>bn<bar>bd<CR>
 set display+=lastline
 
 if has("autocmd")
-  " http://people.smu.edu/jrobinet/howto/customize-vim.asp 
+  " http://people.smu.edu/jrobinet/howto/customize-vim.asp
   " Podczas edycji pliku zawsze przeskakuj do ostatniej znany pozycji kursora.
   " Nie rob tego gdy pozycja jest bledna lub gdy wewnatrz uchwytu zdarzenia
-  " (zdarza sie podczas upuszczania pliku na gvim). 
-  autocmd BufReadPost * 
-    \ if line("'\"") > 0 && line("'\"") <= line("$") | 
-    \   exe "normal g`\"" | 
-    \ endif 
+  " (zdarza sie podczas upuszczania pliku na gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
 endif " has("autocmd")
 
 nnoremap j gj
@@ -89,6 +89,11 @@ nmap <F6> :call LevelingDay()<CR>
 imap <F6> <C-o>:call LevelingDay()<CR>
 nmap <F7> :call LevelingWork()<CR>
 imap <F7> <C-o>:call LevelingWork()<CR>
+
+" http://stackoverflow.com/questions/17428531/how-to-make-vim-search-wrap-more-obvious
+hi WarningMsg ctermfg=white ctermbg=red guifg=White guibg=Red gui=None
+
+set nu
 " }}}
 " Vundle {{{
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -118,6 +123,8 @@ Bundle 'gmarik/vundle'
 "Bundle 'file:///Users/gmarik/path/to/plugin'
 Bundle 'scrooloose/nerdtree'
 map <F5> :NERDTreeToggle<CR>
+
+Bundle 'itchyny/calendar.vim'
 
 
 filetype plugin indent on     " required!
@@ -211,7 +218,7 @@ autocmd FileType python setl tw=160 wm=5 fo=cqt list lcs=eol:\ ,tab:·\
 " }}}
 " Ruby {{{
 autocmd FileType ruby setl expandtab cindent ts=4 sw=4 sts=4 ai
-autocmd FileType ruby setl tw=160 wm=5 fo=cqt list lcs=eol:\ ,tab:·\ 
+autocmd FileType ruby setl tw=160 wm=5 fo=cqt list lcs=eol:\ ,tab:·\
 	\ cinwords=if,elif,else,for,while,try,except,finally,def,class
 	\ fdm=syntax foldignore= foldnestmax=10 foldlevelstart=0
 " }}}
@@ -262,10 +269,18 @@ autocmd FileType html setl expandtab cindent ts=2 sw=2 sts=2 ai
 " Appendix E: Vim Syntax Highlighter http://www.methods.co.nz/asciidoc/userguide.html
 " https://github.com/dagwieers/asciidoc-vim
 autocmd BufRead,BufNewFile *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT,*.adoc
-        \ setlocal autoindent expandtab tabstop=8 softtabstop=2 shiftwidth=2 filetype=asciidoc
+        \ setlocal autoindent expandtab tabstop=2 softtabstop=2 shiftwidth=2 filetype=asciidoc
         \ textwidth=0 wrap formatoptions=tcqn
         \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+
         \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
+" }}}
+" Groovy {{{
+" http://groovy.codehaus.org/Other+Plugins
+" https://github.com/vim-scripts/groovy.vim--Ruley
+Bundle 'groovy.vim--Ruley'
+autocmd BufRead,BufNewFile *.groovy
+        \ setlocal autoindent expandtab tabstop=4 softtabstop=4 shiftwidth=4 filetype=groovy
+	\ fdm=indent
 " }}}
 " Backup {{{
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
@@ -389,14 +404,14 @@ let s:h3 = "=== "
 
 function LevelingDay()
   " http://vim.wikia.com/wiki/Insert_current_date_or_time
-  let date = strftime("%Y-%m-%d")
+  let date = strftime("%Y-%m-%d %H:%M")
   put=''
   put=s:h2.date.' Day'
   put=''
 endfunction
 
 function LevelingWork()
-  let date = strftime("%Y-%m-%d %H:%M:%S %z")
+  let date = strftime("%Y-%m-%d %H:%M")
   put=''
   put=s:h3.date.' Work: '
   normal! A
