@@ -79,3 +79,8 @@ export MC_SKIN=$HOME/mc-solarized-skin/solarized.ini
 [ -f ~/.bash_profile_custom ] && . ~/.bash_profile_custom
 
 export RUST_PATH=~/projects/rust
+
+#first: emacs --deamon
+alias emdaemon="emacs --daemon"
+alias em="emacsclient -t -nw"
+alias emkill="emacsclient -e '(kill-emacs)'"
