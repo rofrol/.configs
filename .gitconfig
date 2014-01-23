@@ -16,7 +16,7 @@
 	br = branch
 	co = checkout
 	logo = log --oneline --decorate
-	logg = log --oneline --decorate --graph
+	logg = log --oneline --decorate --graph --all
 	logs = log --oneline --decorate --stat
 
 	df = diff
@@ -37,5 +37,5 @@
 	dump = cat-file -p
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
 [push]
-	#default = simple
-	default = matching
+	#default = current
+	default = simple
