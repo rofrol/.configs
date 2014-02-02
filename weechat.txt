@@ -6,6 +6,9 @@ http://weechat.org/files/doc/stable/weechat_user.en.html
 
 == Quick Start
 
+Freenode
+
+----
 /server add freenode chat.freenode.net/6697 -ssl
 /set irc.server.freenode.autoconnect on
 /set irc.server.freenode.nicks "rofrol"
@@ -16,12 +19,20 @@ http://weechat.org/files/doc/stable/weechat_user.en.html
 /set irc.look.server_buffer independent
 /save
 /connect freenode
+----
 
+And mozilla
+
+----
 /server add mozilla irc.mozilla.org/6697 -ssl
 /set irc.server.mozilla.nicks "rofrol"
 /set irc.server.mozilla.autojoin "#rust"
+/save
+/connect mozilla
+----
 
 http://www.weechat.org/files/doc/stable/weechat_quickstart.en.html
+
 https://wiki.archlinux.org/index.php/WeeChat
 
 == Keys
@@ -35,8 +46,9 @@ alt+k press key
 
 == Ignore
 
+----
 /ignore add somenick freenode #somechat
-
+----
 
 == What is the difference between the /ignore and /filter commands?
 
@@ -48,6 +60,9 @@ http://www.weechat.org/files/doc/weechat_faq.en.html#ignore_vs_filter
 
 == Filter
 
+by default, the key alt+= toggles filters
+
+----
 /set irc.look.smart_filter on
 /filter add irc_smart * irc_smart_filter *
 /filter add joinquit * irc_join,irc_part,irc_quit *
@@ -55,19 +70,33 @@ http://www.weechat.org/files/doc/weechat_faq.en.html#ignore_vs_filter
 /set irc.look.display_join_message "332,333,329"
 #filter all other
 /filter add irc_join_topic_date * irc_332,irc_333,irc_329 *
+----
 
 == Filter nicks
 /filter add exherbo_bots irc.freenode.#exherbo,irc.freenode.#paludis nick_zebrapig,nick_gerritwk*,nick_irker* *
 /filter add exherbo_pqpdpl irc.freenode.#exherbo,irc.freenode.#paludis * ^!p(q|d|l)
 /key bind meta2-12~ /filter toggle exherbo_bots;/filter toggle exherbo_pqpdpl
 
-== Smart filter
+== smart_filter
 
 A new smart filter for IRC join/part/quit message has been added. It is disabled by default (so you'll see all join/part/quit by default).
 
 To enable it, use following commands:
+
+----
 /set irc.look.smart_filter on
 /filter add irc_smart * irc_smart_filter *
+----
+
+and help
+
+----
+/help irc.look.display_join_message
+----
+
+http://weechat.org/files/doc/weechat_faq.en.html#filter_irc_join_part_quit
+
+== smart_filter_delay
 
 You can setup delay: /set irc.look.smart_filter_delay 5
 How does it work?
@@ -81,26 +110,36 @@ http://dev.weechat.org/post/2008/10/25/Smart-IRC-join-part-quit-message-filter
 Smart Filter
 First, we need to enable smart filters:
 
+----
 /set irc.look.smart_filter "on"
+----
 
 Next, we will create the sfilter alias:
 
+----
 /alias sfilter filter add irc_smart_$server_$channel irc.$server.$channel irc_smart_filter *
+----
 
 We can now type
 
+----
 /sfilter
+----
 
 in any buffer, and the smart filter will only be enabled for that buffer.
 
 The following alias will remove a previously enabled smart filter in the current buffer:
 Add the alias:
 
+----
 /alias rmsfilter filter del irc_smart_$server_$channel
+----
 
 and execute it by
 
+----
 /rmsfilter
+----
 
 https://wiki.archlinux.org/index.php/WeeChat
 
@@ -116,9 +155,14 @@ If yes, just follow these steps:
 https://plus.google.com/102544516035551247301/posts/9qrG7ccBkmA
 
 == Solarized
+
+----
 /set logger.color.backlog_line default
+----
 
 on #weechat
+
+----
 14:47:47         rofrol | I have some problem with colors after reconnecting
 14:47:52         rofrol | http://img41.imageshack.us/img41/3830/7x77.png
 14:48:12         rofrol | I'm using putty and solarized colors
@@ -133,35 +177,52 @@ on #weechat
 15:03:36     @FlashCode | not the same as chat, no
 15:03:43     @FlashCode | because it's read from log files, which have no colors
 15:03:52     @FlashCode | and no tags (many colors are found using tags)
+----
 
 == Columns
 
+----
 #nicks on the left
 /set weechat.look.prefix_align_min 15
 /set weechat.look.prefix_align_max 15
 #nicks on the right
 /set weechat.bar.nicklist.size 15
 /set weechat.bar.nicklist.size_max 15
+----
 
 == Interactive option setting - iset
 
+----
 /script install iset.pl
 /iset
+----
 
 http://dev.weechat.org/post/2008/04/19/Script-iset
 
 
 to view the whole list of all the options with a value of ‘magenta’ or ‘lightmagenta’.
+
+----
 /iset =magenta
+----
 
 To show only magenta, not both, type :
+
+----
 /iset ==magenta
+----
 
 You can change the color! Either use :
+
+----
 alt + +
+----
 
 until you reach the desired color, or :
+
+----
 alt + enter
+----
 
 If it doesn't work try: Esc Enter or alt+ctrl+m or alt+ctrl+j
 
@@ -174,10 +235,18 @@ http://pascalpoitras.com/2013/06/14/improve-weechat-by-using-script-iset/
 
 more
 
+----
 /iset freenode
+----
 
 unset
+
+----
 alt+iu
+----
 
 If something goes wrong and you see no options:
+
+----
 /iset *
+----
