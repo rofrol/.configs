@@ -243,6 +243,7 @@ set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 syntax on
 autocmd FileType go setl ts=4 sw=4
+	\ fdm=syntax foldignore= foldnestmax=3 foldlevelstart=0
 " }}}
 " Rust {{{
 Bundle 'wting/rust.vim'
