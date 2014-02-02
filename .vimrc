@@ -298,7 +298,7 @@ set pastetoggle=<F2>
 Bundle 'altercation/vim-colors-solarized'
 if &t_Co >= 256 || has("gui_running")
 	set background=dark
-	colorscheme solarized
+	"colorscheme solarized
 endif
 
 " http://stackoverflow.com/questions/16840433/forcing-vimdiff-to-wrap-lines

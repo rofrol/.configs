@@ -56,7 +56,9 @@ export GIT_SSL_NO_VERIFY=true
 export ORACLE_VERSION="10.2.0.5"
 export ORACLE_HOME="/usr/lib/oracle/$ORACLE_VERSION/client64"
 export PATH=$PATH:"$ORACLE_HOME/bin"
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$ORACLE_HOME/lib"
+
+#glibc fails building
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"$ORACLE_HOME/lib"
 
 # http://superuser.com/questions/310914/permanently-change-date-time-format-for-ls
 export TIME_STYLE=long-iso
@@ -69,11 +71,11 @@ eval `dircolors ~/.configs/dircolors.256dark`
 
 # based on https://raw.github.com/nkulikov/mc-solarized-skin/master/solarized.ini
 # improved lines and marked bg to gray
-if [ -d $HOME/mc-solarized-skin ]; then
-	cd $HOME/mc-solarized-skin && git pull && cd -
-else
-	git clone https://github.com/rofrol/mc-solarized-skin $HOME/mc-solarized-skin
-fi
+#if [ -d $HOME/mc-solarized-skin ]; then
+#	cd $HOME/mc-solarized-skin && git pull && cd -
+#else
+#	git clone https://github.com/rofrol/mc-solarized-skin $HOME/mc-solarized-skin
+#fi
 export MC_SKIN=$HOME/mc-solarized-skin/solarized.ini
 
 [ -f ~/.bash_profile_custom ] && . ~/.bash_profile_custom
