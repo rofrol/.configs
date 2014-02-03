@@ -1,0 +1,79 @@
+== gdb
+
+=== debugging symbols
+
+To check you have debugging symbols in your binary:
+
+----
+(gdb) symbol-file /usr/bin/hello
+----
+
+There are none if you see
+
+----
+Reading symbols from /usr/bin/hello...(no debugging symbols found)...done
+----
+
+But with nm I get no debuggins symobls
+
+----
+$ nm /usr/bin/weechat | head
+nm: /usr/bin/weechat: no symbols
+----
+
+http://wiki.squid-cache.org/SquidFaq/BugReporting
+
+http://wiki.postgresql.org/wiki/Getting_a_stack_trace_of_a_running_PostgreSQL_backend_on_Linux/BSD
+
+https://wiki.debian.org/HowToGetABacktrace
+
+https://developer.pidgin.im/wiki/GetABacktrace
+
+https://wiki.ubuntu.com/Backtrace
+
+http://wiki.gentoo.org/wiki/Project:Quality_Assurance/Backtraces
+
+=== logging
+
+----
+$ gdb <program>
+(gdb) set pagination off
+(gdb) set logging file debuglog.txt
+(gdb) set logging on
+(gdb) set loggin on
+(gdb) run
+(gdb) bt full
+(gdb) quit
+----
+
+By default log will be in gdb.txt
+
+Another way to get output in file:
+
+----
+$ gdb <program> 2>&1 | tee ~/<program>.log
+----
+
+== Attaching gdb to the backend (pid)
+
+get pid and attach
+
+----
+ps -eF | grep <program>
+sudo gdb -p pid
+----
+
+GDB will pause the execution of the process you specified and drop you into interactive mode. Now you can set some options, and after that resume execution with
+
+----
+(gdb) cont
+----
+
+Once you've collected a few backtraces, detach then exit gdb at the gdb interactive prompt:
+
+----
+(gdb) detach
+(gdb) quit
+----
+
+http://wiki.postgresql.org/wiki/Getting_a_stack_trace_of_a_running_PostgreSQL_backend_on_Linux/BSD

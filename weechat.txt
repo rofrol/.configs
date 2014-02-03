@@ -11,6 +11,7 @@ Freenode
 ----
 /server add freenode chat.freenode.net/6697 -ssl
 /set irc.server.freenode.autoconnect on
+/set irc.server.freenode.autoreconnect on
 /set irc.server.freenode.nicks "rofrol"
 /set irc.server.freenode.username "rofrol"
 /set irc.server.freenode.realname "rofrol"
@@ -27,6 +28,8 @@ And mozilla
 /server add mozilla irc.mozilla.org/6697 -ssl
 /set irc.server.mozilla.nicks "rofrol"
 /set irc.server.mozilla.autojoin "#rust"
+/set irc.server.mozilla.autoconnect on
+/set irc.server.mozilla.autoreconnect on
 /save
 /connect mozilla
 ----
@@ -190,6 +193,12 @@ on #weechat
 /set weechat.bar.nicklist.size_max 15
 ----
 
+or hide it
+
+----
+/set weechat.bar.nicklist.hidden on
+----
+
 == Interactive option setting - iset
 
 ----
@@ -250,3 +259,121 @@ If something goes wrong and you see no options:
 ----
 /iset *
 ----
+
+close iset with '/close'
+
+== To view list of all buffers (windows) open
+
+----
+/buffer
+----
+
+== encrypt your passwords or private data
+
+Encrypt your passwords or private data in a new configuration file called "sec.conf".
+
+http://dev.weechat.org/post/2013/08/04/Secured-data
+
+== ssl
+
+http://blog.e-shell.org/289
+
+http://freenode.net/irc_servers.shtml#ssl
+
+http://freenode.net/faq.shtml#nocloakonjoin
+
+http://freenode.net/sasl/
+
+https://wiki.archlinux.org/index.php/WeeChat#SSH_connection_lost_when_idle
+
+== get number of nicks in channel
+
+----
+/names #<channel>
+----
+
+The list and count will be displayed in the channel window
+
+http://stackoverflow.com/questions/3204175/getting-user-count-from-irc
+
+== beautify
+
+----
+/set weechat.look.prefix_suffix "│"
+/set weechat.look.read_marker_string "─"
+/set weechat.look.bar_more_down "▼"
+/set weechat.look.bar_more_left "◀"
+/set weechat.look.bar_more_right "▶"
+/set weechat.look.bar_more_up "▲"
+/set weechat.look.buffer_time_format "%H:%M"
+----
+
+http://dev.weechat.org/post/2011/08/28/Beautify-your-WeeChat
+
+== mouse
+
+To enable mouse at startup:
+
+----
+/set weechat.look.mouse on
+----
+
+To enable mouse now
+
+----
+/mouse enable
+----
+
+Now you can scroll buffer with mouse wheel.
+
+After changing font size in gnome-terminal, I had to enable mouse again.
+
+== get back your nick
+
+----
+/msg NickServ RELEASE yournick yourpassword
+----
+
+after couple of seconds
+
+----
+/nick yournick
+----
+
+http://freenode.net/faq.shtml#nickisgone
+
+or script http://www.weechat.org/scripts/source/stable/nickregain.pl.html/
+
+== debug
+
+mugu: does another client allow connection? or something like
+
+----
+openssl s_client -connect irc.mozilla.org:6697
+----
+
+allow for irc handshake?
+
+@FlashCode: compile weechat with debug symbols, and get a backtrace of the running process when it is frozen (with gdb)?
+
+@FlashCode      please try weechat without any script loaded
+rofrol  only iset
+@FlashCode      ok, then this one is not a problem
+
+
+
+http://www.weechat.net/files/doc/devel/weechat_user.en.html#report_crashes
+
+weechat recompiled with:
+
+----
+-DCMAKE_BUILD_TYPE=Debug
+----
+
+then get backtrace with gdb.
+
+http://bpaste.net/show/174920/
+
+== url
+
+http://weechat.org/scripts/stable/tag/url/
