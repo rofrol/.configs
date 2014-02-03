@@ -364,6 +364,8 @@ rofrol  only iset
 
 http://www.weechat.net/files/doc/devel/weechat_user.en.html#report_crashes
 
+http://weechat.org/files/doc/devel/weechat_tester.en.html
+
 weechat recompiled with:
 
 ----
