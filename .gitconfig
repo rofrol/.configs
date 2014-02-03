@@ -39,3 +39,5 @@
 [push]
 	#default = current
 	default = simple
+[diff]
+	renames = copy
