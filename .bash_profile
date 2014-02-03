@@ -85,3 +85,7 @@ export RUST_PATH=~/projects/rust
 alias emdaemon="emacs --daemon"
 alias em="emacsclient -t -nw"
 alias emkill="emacsclient -e '(kill-emacs)'"
+
+export PATH=$HOME/csg/iotools:$PATH
+alias m2p="rlwrap python ~/csg/iotools/m2p.py $@"
+alias modut="~/csg/customers/tools/bin/model_unit_test.sh"

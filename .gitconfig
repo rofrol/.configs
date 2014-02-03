@@ -36,6 +36,9 @@
 	type = cat-file -t
 	dump = cat-file -p
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+
+	resm = !"git fetch && git checkout master && git reset --hard origin/master"
+	fp = fetch --prune
 [push]
 	#default = current
 	default = simple
