@@ -6,3 +6,4 @@ ln -sf ~/.configs/.bash_profile ~
 ln -sf ~/.configs/.elinks ~
 ln -sf ~/.configs/flake8 ~/.config/
 ln -sf ~/.configs/.emacs ~
+ln -sf ~/.configs/.xinitrc ~
