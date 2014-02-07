@@ -1,4 +1,6 @@
 " vim:fdm=marker
+" somehow, line above stopped working on one user, but work on another
+autocmd BufRead,BufNewFile .vimrc setlocal fdm=marker
 " Links {{{
 " http://usevim.com/2012/05/09/clean-vimrc/
 " https://wiki.archlinux.org/index.php/Vim/.vimrc
@@ -133,10 +135,6 @@ map <F5> :NERDTreeToggle<CR>
 
 Bundle 'itchyny/calendar.vim'
 
-Bundle 'majutsushi/tagbar'
-Bundle 'marijnh/tern_for_vim'
-
-
 filetype plugin indent on     " required!
 "
 " Brief help
@@ -161,7 +159,7 @@ onoremap <F1> <C-C>za
 vnoremap <F1> zf
 
 " this doesn't work
-au BufRead * normal zR
+" au BufRead * normal zR
 " }}}
 " Syntastic {{{
 " Syntax checkers with plugins for architecture for many langs
