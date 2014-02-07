@@ -94,6 +94,9 @@ imap <F7> <C-o>:call LevelingWork()<CR>
 hi WarningMsg ctermfg=white ctermbg=red guifg=White guibg=Red gui=None
 
 set nu
+
+set splitbelow " for :sp
+set splitright " for :vs
 " }}}
 " Vundle {{{
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -299,7 +302,7 @@ set pastetoggle=<F2>
 Bundle 'altercation/vim-colors-solarized'
 if &t_Co >= 256 || has("gui_running")
 	set background=dark
-	"colorscheme solarized
+	colorscheme solarized
 endif
 
 " http://stackoverflow.com/questions/16840433/forcing-vimdiff-to-wrap-lines
