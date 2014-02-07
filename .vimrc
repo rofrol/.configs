@@ -97,6 +97,10 @@ set nu
 
 set splitbelow " for :sp
 set splitright " for :vs
+
+" clicking and mouce scroll works
+" but now pasting with midle click has to be done with shift
+set mouse=a
 " }}}
 " Vundle {{{
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
@@ -129,6 +133,9 @@ map <F5> :NERDTreeToggle<CR>
 
 Bundle 'itchyny/calendar.vim'
 
+Bundle 'majutsushi/tagbar'
+Bundle 'marijnh/tern_for_vim'
+
 
 filetype plugin indent on     " required!
 "
@@ -152,6 +159,9 @@ inoremap <F1> <C-O>za
 nnoremap <F1> za
 onoremap <F1> <C-C>za
 vnoremap <F1> zf
+
+" this doesn't work
+au BufRead * normal zR
 " }}}
 " Syntastic {{{
 " Syntax checkers with plugins for architecture for many langs
