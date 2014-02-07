@@ -236,7 +236,7 @@ autocmd FileType python setl tw=160 wm=5 fo=cqt list lcs=eol:\ ,tab:·\
 " }}}
 " Ruby {{{
 autocmd FileType ruby setl expandtab cindent ts=4 sw=4 sts=4 ai
-autocmd FileType ruby setl tw=160 wm=5 fo=cqt
+	\ tw=160 wm=5 fo=cqt
 	\ list lcs=eol:\ ,tab:·\ 
 	\ cinwords=if,elif,else,for,while,try,except,finally,def,class
 	\ fdm=syntax foldignore= foldnestmax=10 foldlevelstart=0
