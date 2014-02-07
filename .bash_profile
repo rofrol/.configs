@@ -90,4 +90,13 @@ export PATH=$HOME/csg/iotools:$PATH
 alias m2p="rlwrap python ~/csg/iotools/m2p.py $@"
 alias mut="~/csg/customers/tools/bin/model_unit_test.sh"
 
-alias r="cave resolve -x repository/$@"
+# cave
+# http://zaufi.github.io/my-paludis-hooks-and-addons.html
+source ~/.configs/00-make-completion-wrapper.sh
+alias cr='cave resolve'
+function crr() {
+	cave resolve -x repository/"$@"
+}
+
+make_completion_wrapper _cave _cr cave resolve
+complete -o bashdefault -o default -F _cr cr
