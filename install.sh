@@ -3,7 +3,8 @@ mkdir -p ~/.config
 ln -sf ~/.configs/.vimrc ~
 ln -sf ~/.configs/.gitconfig ~
 ln -sf ~/.configs/.bash_profile ~
-ln -sf ~/.configs/.elinks ~
+[ -d ~/.configs/.elinks ] || ln -sf ~/.configs/.elinks ~
 ln -sf ~/.configs/flake8 ~/.config/
 ln -sf ~/.configs/.emacs ~
 ln -sf ~/.configs/.xinitrc ~
+sudo ln -sf ~/.configs/30-msfonts-aliases.conf /usr/share/fontconfig/conf.avail/
