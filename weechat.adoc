@@ -76,7 +76,7 @@ by default, the key alt+= toggles filters
 ----
 
 == Filter nicks
-/filter add exherbo_bots irc.freenode.#exherbo,irc.freenode.#paludis nick_zebrapig,nick_gerritwk*,nick_irker* *
+/filter add exherbo_bots irc.freenode.#exherbo,irc.freenode.#paludis nick_zebrapig,nick_gerritwk*,nick_irker*,nick_u-u-commits* *
 /filter add exherbo_pqpdpl irc.freenode.#exherbo,irc.freenode.#paludis * ^!p(q|d|l)
 /key bind meta2-12~ /filter toggle exherbo_bots;/filter toggle exherbo_pqpdpl
 
