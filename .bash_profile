@@ -28,7 +28,6 @@ export PATH=$PATH:$HOME/svn/iotools
 
 export PATH=$PATH:$HOME/csg/customers/tools/bin
 
-
 export SQLPATH=$HOME/.sqlplus
 
 export GOPATH=$HOME/projects/go
@@ -104,3 +103,7 @@ make_completion_wrapper _cave _cr cave resolve
 complete -o bashdefault -o default -F _cr cr
 
 alias w="python ~/bin/wiki.py $@"
+alias o="xdg-open"
+alias s="systemctl"
+complete -F _systemctl s
+>>>>>>> aliases
