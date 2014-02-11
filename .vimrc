@@ -100,7 +100,7 @@ set nu
 set splitbelow " for :sp
 set splitright " for :vs
 
-" clicking and mouce scroll works
+" clicking and mouse scroll works
 " but now pasting with midle click has to be done with shift
 set mouse=a
 
