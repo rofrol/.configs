@@ -103,6 +103,11 @@ set splitright " for :vs
 " clicking and mouce scroll works
 " but now pasting with midle click has to be done with shift
 set mouse=a
+
+" After that typing text in search mode and then hitting ctrl-n goes to next occurrence of that text without exiting search mode
+" http://stackoverflow.com/a/9195992/588759
+cmap <c-n> <CR>n/<c-p>
+
 " }}}
 " Vundle {{{
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
