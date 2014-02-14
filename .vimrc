@@ -108,6 +108,8 @@ set mouse=a
 " http://stackoverflow.com/a/9195992/588759
 cmap <c-n> <CR>n/<c-p>
 
+set nowrapscan
+
 " }}}
 " Vundle {{{
 " git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
