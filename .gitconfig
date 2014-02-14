@@ -12,7 +12,7 @@
 	#http://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
 	#https://coderwall.com/p/euwpig
 	# git -c color.status=always status | less -R -F
-	st = status -s
+	st = status -sb
 	ci = commit
 	br = branch
 	co = checkout
