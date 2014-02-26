@@ -20,6 +20,9 @@
 	logg = log --oneline --decorate --graph --all
 	logs = log --oneline --decorate --stat
 
+	resm = !"git fetch && git checkout master && git reset --hard origin/master"
+	pu = !"git push -u origin $(git symbolic-ref -q HEAD --short)"
+
 	df = diff
 	dc = diff --cached
 	#default git log short
@@ -38,7 +41,6 @@
 	dump = cat-file -p
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
 
-	resm = !"git fetch && git checkout master && git reset --hard origin/master"
 	fp = fetch --prune
 [push]
 	#default = current
