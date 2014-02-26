@@ -236,7 +236,8 @@ autocmd FileType python setl tw=160 wm=5 fo=cqt list lcs=eol:\ ,tab:·\
 " }}}
 " Ruby {{{
 autocmd FileType ruby setl expandtab cindent ts=4 sw=4 sts=4 ai
-autocmd FileType ruby setl tw=160 wm=5 fo=cqt list lcs=eol:\ ,tab:·\
+autocmd FileType ruby setl tw=160 wm=5 fo=cqt
+	\ list lcs=eol:\ ,tab:·\ 
 	\ cinwords=if,elif,else,for,while,try,except,finally,def,class
 	\ fdm=syntax foldignore= foldnestmax=10 foldlevelstart=0
 " }}}
@@ -292,6 +293,10 @@ autocmd BufRead,BufNewFile *.txt,*.asciidoc,README,TODO,CHANGELOG,NOTES,ABOUT,*.
         \ textwidth=0 wrap formatoptions=tcqn
         \ formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\\|^\\s*<\\d\\+>\\s\\+\\\\|^\\s*[a-zA-Z.]\\.\\s\\+\\\\|^\\s*[ivxIVX]\\+\\.\\s\\+
         \ comments=s1:/*,ex:*/,://,b:#,:%,:XCOMM,fb:-,fb:*,fb:+,fb:.,fb:>
+" }}}
+" Markdown {{{
+" https://github.com/thoughtbot/dotfiles/issues/18#issuecomment-4577987
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md  setf markdown
 " }}}
 " Groovy {{{
 " http://groovy.codehaus.org/Other+Plugins
