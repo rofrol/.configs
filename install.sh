@@ -7,4 +7,5 @@ ln -sf ~/.configs/.bash_profile ~
 ln -sf ~/.configs/flake8 ~/.config/
 ln -sf ~/.configs/.emacs ~
 ln -sf ~/.configs/.xinitrc ~
+ln -sf ~/.configs/.Xresources ~
 sudo ln -sf ~/.configs/30-msfonts-aliases.conf /usr/share/fontconfig/conf.avail/

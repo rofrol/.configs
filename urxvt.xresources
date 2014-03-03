@@ -1,0 +1,44 @@
+! https://wiki.archlinux.org/index.php/rxvt-unicode
+
+! scrollbar style - rxvt (default), plain (most compact), next, or xterm
+URxvt.scrollstyle: plain
+
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+URxvt*buffered: true
+URxvt*cursorBlink: true
+URxvt*depth: 32
+URxvt*borderless: 1
+URxvt*scrollBar: true
+URxvt*scrollBar_right: true
+URxvt*loginShell: true
+URxvt*secondaryScroll: true
+URxvt*savelines: 5000
+
+! fc-list
+!URxvt.font:xft:Liberation Mono:style=Regular:medium:pixelsize=11
+!URxvt.boldFont:xft:Liberation Mono:style=Regular:medium:pixelsize=11
+URxvt.font:xft:Droid Sans Mono:Regular:pixelsize=16
+URxvt.boldFont:xft:Droid Sans Mono:Regular:pixelsize=16
+
+! https://wiki.archlinux.org/index.php/x_resources
+! for T in `find /usr/share/terminfo -type f -printf '%f '`;do echo "$T `tput -T $T colors`";done|sort -nk2 | grep 256
+
+XTerm*termName: rxvt-unicode-256color
+
+! By default the distance between characters can feel too wide
+URxvt.letterSpace: -1
+
+URxvt.perl-ext-common:  default,tabbed
+
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 3
+URxvt.tabbed.tab-bg: 0

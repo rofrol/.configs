@@ -1,0 +1,24 @@
+! https://wiki.archlinux.org/index.php/x_resources
+
+!-- Xft settings -- !
+! http://askubuntu.com/a/45774
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+! XTerm*termName:         xterm-256color
+
+! Xcursor --------------------------------------------------------------------
+
+Xcursor.theme: Vanilla-DMZ-AA
+Xcursor.size:  22
+
+#include ".configs/urxvt.xresources"
+#include ".configs/solarized.xresources"
+
+dmenu.selforeground: S_base1
+dmenu.selbackground: S_base02
+
+XTerm*dynamicColors:    true

@@ -2,7 +2,8 @@
 #exec gnome-session --session=gnome-classic
 #setxkbmap -option compose:ralt
 #exec gnome-session
-setxkbmap pl
+localectl set-x11-keymap pl
+#setxkbmap pl
 
 # https://bbs.archlinux.org/viewtopic.php?pid=1377008#p1377008
 # https://wiki.archlinux.org/index.php/dwm
@@ -23,4 +24,7 @@ if [ -n "$DISPLAY" ]; then
 	BROWSER=google-chrome
 	TERM=gnome-terminal
 fi
+
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
 exec dwm
