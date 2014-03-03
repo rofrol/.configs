@@ -1,4 +1,16 @@
-# .bash_profile
+# .profile vs. .bash_profile vs. .bashrc
+
+# http://dghubble.com/blog/posts/.bashprofile-.profile-and-.bashrc-conventions/
+# http://stackoverflow.com/questions/415403/whats-the-difference-between-bashrc-bash-profile-and-environment
+
+# The idea behind this was that one-time setup was done by .profile (or shell-specific version thereof), and per-shell stuff by .bashrc. For example, you generally only want to load environment variables once per session instead of getting them whacked any time you launch a subshell within a session, whereas you always want your aliases (which aren't propagated automatically like environment variables are).
+# http://serverfault.com/a/261807
+
+# Mac OS X's Terminal.app actually runs a login shell rather than a non-login shell by default for each new terminal window, calling .bash_profile instead of .bashrc
+# Login shells are the ones that are read one you login (so, they are not executed when merely starting up xterm, for example).
+
+# http://stackoverflow.com/questions/415403/whats-the-difference-between-bashrc-bash-profile-and-environment
+
 
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
