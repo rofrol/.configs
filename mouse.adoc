@@ -1,0 +1,238 @@
+
+That is how pros/good players play. Testing right settings for your mouse should be moving the mouse from one end of your mousepad to the other makes your player complete 1 360.
+
+http://forums.steampowered.com/forums/showthread.php?t=3163709
+
+This but you also pixel skip at 400 dpi if your using high resolution like 1920x1080. Its a very subtle difference but still detectable. You should use 800 if your using high res.
+
+http://forums.steampowered.com/forums/showthread.php?t=3187443
+
+
+"The DPI steps are bad. They are 450, 1150, 2300. Those last two are extremely high and 90% of gamers should not be using them. Unfortunately, gaming mice developers have been deceiving gamers into thinking that higher DPI = more accuracy & better mouse, when the reality is that higher DPI = higher sensitivity. So now new gaming mice developers who actually care and know what they're doing are forced to include these ridiculously high DPI steps in order to appeal to uninformed casual gamers. This might be why zowie incorporated these silly DPI steps.
+
+In reality most gamers who know what they're doing will use 6/11 (middle) windows slider with Enhance Pointer Precision unchecked, and have their mouse on 400 or 450 dpi. Anything up to 900 is reasonable depending on the game and your monitor's resolution. Anything beyond that and you will lose the ability to make small, precise movements. So what knowledgeable gamers really need are DPI steps between 400 and 900."
+
+http://konr.co.uk/mouse/
+
+http://forums.steampowered.com/forums/showthread.php?t=3187443&page=3
+
+
+is a mouse with an ultrahigh CPI value more precise? No. Your mouse just moves more pixels with every movement. (inch)
+
+http://mousespeed.net/sc2-mouse-optimization
+
+
+http://ragial.com/mouse/
+
+http://forums.steampowered.com/forums/showthread.php?t=2926641
+
+http://counterstrikesourcetactics.blogspot.ie/2008/02/css-mouse-optimization-guide.html
+
+http://www.funender.com/quake/mouse/index.html
+
+https://docs.google.com/spreadsheet/pub?key=0AkghPvIh7ZVwdGZ3WXE0dDlTdk5rT1ZKZm91VXVzREE&output=html
+== DPI
+
+I ran into another problem while trying to find professional gamers to talk to—most of their teams are sponsored by companies like Razer and SteelSeries and are obligated to use their sponsors’ equipment. I talked to two members from [Latest and Greatest Gaming](http://www.mys4c.com/clans/lag/portal.php) who had no affiliation with mouse companies, however, and they offered some good advice.
+
+First: DPI/CPI isn’t as big a deal as marketing makes it out to be. “It depends on the person and the [screen] resolution and the game,” Derek from Latest and Greatest Gaming told me. “You don’t want to play Counterstrike with 6k DPI or 3k DPI even. Less than 1,000 for a game like that. For Starcraft 2 I think you should use 3k+, as much as you can control accurately. For me its 3k DPI at 1080p.”
+
+Another LaG player, Loi Doan, argues that most players don’t even need sensitivity options that high. “Currently I play on 450 DPI…You can be fast with even a low DPI. I average around 230 APM (actions per minute) on SC2.”
+
+The higher the CPI setting, the more quickly the mouse moves across the screen, and the harder it is to be accurate. 5,000 CPI makes a great bullet point, but you’d need superhuman control to nail a headshot–and not accidentally spin in circles–at that sensitivity.
+
+Second: Both pro gamers agreed that lighter and simpler is better.
+
+http://thewirecutter.com/reviews/best-gaming-mouse/
+
+== mie
+
+Microsoft Intellimouse Explorer 3.0 Legends Edition with Hyperglide mousefeet on a SteelSeries QcK heavy
+
+http://www.reddit.com/r/QuakeLive/comments/1f6bhp/what_mouse_do_you_use/
+
+
+Cons (of course)
+Only 400 dpi...desktop resolutions are like, 1920x1200, and anything less than 1600 dpi feels sluggishly slow on a desktop. 400 dpi is awesome for games...but come on, can't be helped though.
+
+
+The original Microsoft Intellimouse Explorer 3.0 was a great mouse I used it for 4 years. The old one deserves without doubt 5 stars. This is a 2nd edition manufactured to much lower standards. The mouse wheel is very loude inprecise and hard to turn. The "back" button on the side gives no feedback you never know when you pressed it. Sometimes it does not respond at all.
+
+I returned this mouse and got the Logitech MX 518, also a older designe but manufactured today to the same high quality as years ago.
+
+http://www.amazon.com/review/R1DZVF9FE27I7S/ref=cm_cr_dp_title?ie=UTF8&ASIN=B000GOUE7O&nodeID=172282&store=electronics
+
+
+Something you may need to know: 1st, the dpi is not 450, it's around 440, and actually the old ie 3.0 and wmo (which says 400 dpi) are 440 dpi too; 2nd, the frame capturing speed is 9000 fps, not over.
+
+http://www.amazon.co.uk/Microsoft-B75-00115-Intellimouse-Explorer-3-0/dp/B000JVRFHG
+
+http://www.esreality.com/?a=longpost&id=1265679&page=5
+
+
+== mouses using flawless sensors
+
+http://www.esreality.com/index.php?a=post&id=2024663
+
+http://www.overclock.net/t/1422308/microsoft-intellimouse-explorer-3-0-overclock-to-500-hertz-or-not
+
+As of 2013 the IntelliMouse lineup includes a number of models, both wired and wireless, and including the IntelliMouse Explorer 3.0 http://en.wikipedia.org/wiki/IntelliMouse
+
+  http://www.youtube.com/watch?v=wFKuvfqyyyw
+
+http://www.aliexpress.com/store/product/Microsoft-IntelliMouse-EXPLORER-3-0-Brand-New-Original-Fast-Free-Shipping/803343_372154380.html
+
+
+
+421 - Razer Abyssus (+Razer Goliathus) -> MS WMO 1.1a
+alfaomega - Razer DA (+Razer Goliathus)
+alteza - Zowie AM (+Artisan Hien Mid + SS 6Gv2)
+_ash - Logitech G400 (+Razer Goliathus Control + Razer Black Widow 2012)
+axion - Razer DA 3G
+Av3k - Logitech MX 310 -> Razer Salmosa -> SS Kana
+baksteen - MS IME 3.0 -> SS Kana
+bodzo - SS Ikari Laser -> MS WMO 1.1a
+calipt - Razer DA -> Roccat Kova -> SS Kinzu v1 -> Razer Abyssus -> Lollysus optical (WMO innards)
+cas - Logitech G100s
+cerboz - Zowie AM (+Corepad C1 L)
+chance - Razer Salmosa -> MS WMO 1.1a -> SS Kinzu v1
+cooller - MS WMO 1.1a -> Razer Abyssus (+Corepad Cerro XXX-Large) -> Zowie EC2 eVo
+Cypher - MS WMO 1.1a -> Razer DA -> Razer Abyssus -> SS Kana -> MS WMO 1.1a
+czm - Logitech MX 300 -> Razer Salmosa -> SS Kinzu v1
+DaHanG - SS Ikari Optical -> Razer DA -> SS Xai -> SS Kinzu v1 -> SS Kana (+Razer Goliathus + SS 7G)
+DEISMA - MS WMO 1.1a (+Razer Goliathus Control)
+dem0n - MS WMO 1.1a
+dkt - Logitech G9 -> MS IME 3.0 -> Zowie EC1 -> Raptor M3 DKT -> Zowie FK
+draven - MS IMO 1.1a
+evil - SS Kinzu v1 (+SS QcK Heavy + SS 6Gv2)
+fazz - MS WMO 1.1a -> MS IME 3.0 -> Razer Abyssus
+fearzzz - Logitech MX 518 -> Logitech G100s(+SS QcK)
+fox - MS WMO 1.1a
+FraZe - SS Kana (+SS QcK+)
+frs - Razer Abyssus
+funnyb - MS WMO 1.1a
+Gandhi - Logitech MX 300
+Garpy - Razer DA
+griffin - MS IME 3.0
+guard - MS IME 3.0 -> Zowie EC1 eVo
+h8m3 - Ninox Aurora beta (+Artisan Hien Hard + SS 7G)
+hypnoi - Razer Abyssus (+Razer Goliathus Speed + Logitech G11)
+ins - MS IME 3.0 -> some black ball mouse
+ischju - MS IMO 1.1a
+jibo - MS WMO 1.1a
+k1llsen - Logitech MX 518 -> Logitech G9 -> Logitech G9x
+krysa - MS WMO 1.1a
+l1nkin - MS WMO 1.1a -> SS Kinzu v1 -> KinzuAdder -> Ninox Aurora
+Latrommi - Logitech G400 (+Razer Goliathus Control)
+madix - Zowie IMO 1.1a
+mew - Logitech MX 300 -> Logitech G100
+mj_ - Razer Abyssus (+QcK Mass)
+nightops - Razer DA 3G
+noctis - Logitech G1 inside MS "Trekker" ball mouse -> Razer Abyssus w. Salmosa internals --> Logitech G100s
+NooD - Zowie AM (+Zowie G-TF Speed)
+pavel_ - SS Xai -> SS Kana -> Zowie EC2 eVo (+SS QcK Heavy + SS 6Gv2)
+PURRI - MS IME 3.0 -> Zowie (EC1 eVo?)
+rapha - Logitech MX 518 -> MS WMO 1.1a w. SS-sticker -> SS Xai (-> MS WMO 1.1a ?)
+rehepapp - Logitech MX 518 -> Razer Abyssus
+Sev3n - MS WMO 1.1a -> Zowie AM (+SS QcK Heavy)
+Spart1e - SS Kinzu v1 -> SS Xai
+starosta - Razer Abyssus (+Razer Mantis Control)
+stermy - MS IME 3.0
+Strenx - Logitech MX 510 -> Logitech MX 518 -> SS Kinzu v1 -> Logitech MX 518 (-> SS Kinzu v1 ?)
+T1E - Razer Abyssus
+toxjq - MS WMO 1.1a
+twister - MS WMO 1.1a -> SS Kana
+unnamedtony - Logitech MX 518
+Vo0 - MS IME 3.0 -> Razer DA -> MS IME 3.0 --> Zowie EC2 eVo
+Weird - Logitech G5
+winz - Razer Abyssus w. Salmosa internals --> Logitech G100s
+Z4muZ - MS IME 3.0
+ZeRo4 - MS Intellimouse (ball) -> MS WMO 1.1a -> Razer Abyssus
+zoot - Logitech MX 518 -> Roccat Kone -> MS IME 3.0 -> SS Kana
+zsx - MS IMO 1.1a(?) -> MS IME 3.0
+
+
+bps - Logitech MX 518 -> Razer DA
+bulat - MS IME 3.0
+LocKtar - Logitech MX 518 -> Logitech G400
+Milton - Logitech G400
+ParadokS - Logitech G400
+rikoll - MS IME 3.0 -> Logitech MX 518 -> Razer Lachesis -> Razer DA -> Logitech G9x
+Zero - Zowie EC2
+
+
+
+1llsen - g9x [1000 cpi] (actually lower due to mouse drivers) (mx518 -> g9 -> g9x)
+strenx - mx518 [800 cpi] (mx510 -> mx518 -> kinzu [800 cpi] -> mx518)
+garpy - deathadder
+av3k - kana [800 cpi] (mx310 -> salmosa -> kana)
+noctis - salmosa/abyssus sensor [800 cpi](frankenmouse: g1 built into an ms "trekker" ball mouse ->
+salmosa -> abyssus sensor built into salmosa)
+
+cypher - kana [400 cpi](wmo -> deathadder -> abyssus [450 cpi] -> kana )
+Cooller - abyssus [450 cpi](wmo [400 cpi] -> abyssus)
+ZeRo4 - abyssus [450 cpi](imo 1.0 -> ie 3.0 [400 cpi] -> abyssus)
+fazz - abyssus (wmo -> ie 3.0 -> Abyssus)
+spart1e - xai [1800 cpi] (deathadder -> xai)
+calipt - lollysus optical (wmo innards) (deathadder -> roccat kova -> kinzu -> abyssus -> lollysus optical)
+linkje - kinzuadder [450 cpi] (wmo -> kinzu -> kinzuadder)
+czm - kinzu (mx300 -> salmosa -> kinzu)
+
+dahang - kana [1600 cpi] (Set to 800 cpi but is actually probably 1600 due to bug with his particular mouse) (ikari optical -> deathadder -> xai [1800 cpi]->kinzu 800 cpi --> kana 800 cpi)
+chance - kinzu (salmosa -> white wmo -> kinzu)
+DKT - Raptor M3 DKT mouse (g9 -> ie 3.0 -> Zowie ec1 [500 cpi] -> Raptor M3 DKT)
+madix - imo 1.1a [400 cpi](ZoWie version)
+zsx - imo 1.1a [400 cpi]
+stermy - ie 3.0 [400 cpi]
+griffin - ie 3.0 [400 cpi]
+z4muz - ie 3.0 [400 cpi]
+v00 - ie 3.0 [400 cpi] (IE 3.0 > deathadder > IE 3.0)
+baksteen ie 3.0 [400 cpi]
+dem0n - wmo [400 cpi]
+bodzo - wmo [400 cpi](Ikari laser -> wmo)
+fox - wmo [400 cpi]
+jibo - wmo [400 cpi]
+tox - wmo [400 cpi]
+rapha - wmo [400 cpi](mx518 -> wmo -> xai -> wmo)
+
+I think this is more accurate!
+
+http://www.esreality.com/post/2399483/what-mice-are-the-quake-pros-using/
+
+== accell
+
+i think the top quake players have accel set so that it only turns on if they move above a certain speed. so for most hand speeds, they have no accel, alowing them to LG/plasma well, but quick swipes will engage the accel.
+
+
+Average sens at 400dpi 3.515 = approx 12 inches a 360 Accel .153
+Cooller - 2.255 sens, .182 accel, 46.09 cm/360
+Cypher - 3.784 sens, .106 accel, 27.46 cm/360
+DaHang - 4.6 sens, .048 accel, 22.59 cm/360
+Av3k - 2.327 sens, .291 accel, 44.64 cm/360
+Bodzo - 3.745 sens, .082 accel, 27.75 cm/360
+Fazz - 4.256 sens, .244 accel, 24.41 cm/360
+K1llsen - 3.45 sens, .12 accel, 30.12 cm/360
+L1nkje - 3.338 sens, .074 accel, 31.13 cm/360
+Noctis - 2.775 sens, .209 accel, 37.44 cm/360
+Rapha - 5 sens, .48 accel, 20.78 cm/360
+Stermy - 4.65 sens, 0 accel, 22.35 cm/360
+Strenx - 2 sens, 0 accel, 51.95 cm/360
+
+http://www.reddit.com/r/truegaming/comments/1l8vy4/the_case_for_mouse_acceleration/
+
+
+== zowie
+
+I would recommend Zowie mice for low sensitivity gaming, they're no frills mice with only 3 DPI settings and don't have 1000 LEDs on them, but they have a flawless optical sensor and a very low lift off distance. Even some optical mice from some brands still have issues with jitter and acceleration.
+
+http://forums.steampowered.com/forums/showthread.php?t=3204142
+
+== grip
+
+http://gaming.stackexchange.com/questions/116391/mouse-grips-how-much-will-i-benefit-from-using-a-claw-or-fingertip-grip-over-a
+
+http://www.test-gear.pl/gripy/
+
+== links
+
+http://www.tested.com/tech/accessories/456280-how-test-gaming-mouse-tracking-accuracy/
