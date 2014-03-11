@@ -1,4 +1,9 @@
 ;;{{{ Packages
+; https://www.gnu.org/software/emacs/manual/html_node/emacs/Package-Menu.html
+;
+; Emacs 24 ships with package.el which allows for easy installation of Emacs Lisp extensions for Emacs, and supports several servers where to find a list of packaged extension.
+; https://github.com/dimitri/el-get
+;
 ; http://ergoemacs.org/emacs/emacs_package_system.html
 ; http://stackoverflow.com/questions/14836958/updating-packages-in-emacs
 (require 'package)
@@ -57,3 +62,28 @@
 (setq make-backup-files nil) ; stop creating those backup~ files
 (setq auto-save-default nil) ; stop creating those #autosave# files
 ;;}}}
+
+(require 'phi-rectangle)
+; replace standard keyboard bindings, but C-return doesn't work for me in mRemoteNG (PuttyNG)
+(phi-rectangle-mode)
+
+;[C-RET] phi-rectangle-set-mark-command
+;Activate the rectangle mark.
+;
+;phi-rectangle-kill-region (replaces “kill-region”)
+;A dwim version of “kill-region”. If the rectangle mark is active, kill rectangle. If the normal mark is active, kill region as usual. Otherwise, kill whole line.
+;
+;phi-rectangle-kill-ring-save (replaces “kill-ring-save”)
+;A dwim version of “kill-ring-save” like “phi-rectangle-kill-region”.
+;
+;phi-rectangle-yank (replaces “yank”)
+;A dwim version of “yank”. If the last killed object is a rectangle, yank rectangle. Otherwise yank a kill-ring item as usual.
+
+; Select, it binds in putty to C-x r C-SPC
+(global-set-key (kbd "C-x r C-@") 'phi-rectangle-set-mark-command)
+; Copy, M-w
+;(global-set-key (kbd "C-x r C-x")   'phi-rectangle-kill-ring-save)
+; Cut, C-w
+;(global-set-key (kbd "C-x r C-w")   'phi-rectangle-kill-region)
+; Paste, C-y
+;(global-set-key (kbd "C-x r M-w")   'phi-rectangle-yank)
