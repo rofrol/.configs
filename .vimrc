@@ -256,6 +256,7 @@ if getline(1) =~# '^#!.*/bin/env\s\+bash\>'
 endif
 " }}}
 " Go {{{
+let g:syntastic_go_checkers=['gofmt']
 filetype off
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
