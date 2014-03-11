@@ -26,6 +26,9 @@ export PATH=$HOME/bin/svn-tools:$PATH
 
 export PATH=$PATH:$HOME/svn/iotools
 
+export PATH=$PATH:$HOME/csg/customers/tools/bin
+
+
 export SQLPATH=$HOME/.sqlplus
 
 export GOPATH=$HOME/projects/go
@@ -88,7 +91,6 @@ alias emkill="emacsclient -e '(kill-emacs)'"
 
 export PATH=$HOME/csg/iotools:$PATH
 alias m2p="rlwrap python ~/csg/iotools/m2p.py $@"
-alias mut="~/csg/customers/tools/bin/model_unit_test.sh"
 
 # cave
 # http://zaufi.github.io/my-paludis-hooks-and-addons.html
@@ -100,3 +102,5 @@ function crr() {
 
 make_completion_wrapper _cave _cr cave resolve
 complete -o bashdefault -o default -F _cr cr
+
+alias w="python ~/bin/wiki.py $@"
