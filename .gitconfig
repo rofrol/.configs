@@ -47,3 +47,9 @@
 	default = simple
 [diff]
 	renames = copy
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = false
