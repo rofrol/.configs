@@ -118,4 +118,3 @@ alias w="python ~/bin/wiki.py $@"
 alias o="xdg-open"
 alias s="systemctl"
 complete -F _systemctl s
->>>>>>> aliases
