@@ -305,6 +305,16 @@
       <command>kfmclient openProfile filemanagement</command>
     </action>
   </keybind>
+  <!-- rofrol -->
+  <keybind key="A-p">
+      <action name="Execute">
+          <name>dmenu</name>
+          <command>dmenu_run</command>
+      </action>
+  </keybind>
+  <keybind key="W-F11">
+    <action name="Reconfigure"/>
+  </keybind>
 </keyboard>
 
 <mouse>

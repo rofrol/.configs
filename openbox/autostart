@@ -15,3 +15,6 @@
 # If you want to use XFCE config tools...
 #
 #xfce-mcs-manager &
+volumeicon &
+tint2 -c $HOME/Downloads/tint2/Numix_tint2/dark_taskbar/tint2rc &
+conky -c $HOME/.conky_font2
