@@ -43,7 +43,7 @@ export PATH=$PATH:$HOME/csg/customers/tools/bin
 export SQLPATH=$HOME/.sqlplus
 
 export GOPATH=$HOME/projects/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:$(go env GOROOT)/bin
 
 export PYTHONPATH=$HOME/pythonpath
 # http://stackoverflow.com/questions/10624511/upgrade-python-without-breaking-yum/10624568#10624568
