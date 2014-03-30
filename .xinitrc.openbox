@@ -1,0 +1,3 @@
+localectl set-x11-keymap pl
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+exec openbox-session
