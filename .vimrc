@@ -92,6 +92,9 @@ imap <F6> <C-o>:call LevelingDay()<CR>
 nmap <F7> :call LevelingWork()<CR>
 imap <F7> <C-o>:call LevelingWork()<CR>
 
+" http://superuser.com/questions/321547/how-do-i-replace-paste-yanked-text-in-vim-without-yanking-the-deleted-lines
+vnoremap p "_dP
+
 " http://stackoverflow.com/questions/17428531/how-to-make-vim-search-wrap-more-obvious
 hi WarningMsg ctermfg=white ctermbg=red guifg=White guibg=Red gui=None
 
@@ -239,7 +242,7 @@ autocmd FileType ruby setl expandtab cindent ts=4 sw=4 sts=4 ai
 	\ tw=160 wm=5 fo=cqt
 	\ list lcs=eol:\ ,tab:·\ 
 	\ cinwords=if,elif,else,for,while,try,except,finally,def,class
-	\ fdm=syntax foldignore= foldnestmax=10 foldlevelstart=0
+	\ nofoldenable fdm=syntax foldignore= foldnestmax=10 foldlevelstart=0
 " }}}
 " Bash {{{
 " set syntax highlighting default to bash for ft=sh
@@ -264,6 +267,7 @@ filetype plugin indent on
 syntax on
 autocmd FileType go setl ts=4 sw=4
 	\ fdm=syntax foldignore= foldnestmax=3 foldlevelstart=0
+Bundle 'dgryski/vim-godef'
 " }}}
 " Rust {{{
 Bundle 'wting/rust.vim'
