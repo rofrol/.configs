@@ -31,6 +31,11 @@
 	type = cat-file -t
 	dump = cat-file -p
 	fp = fetch --prune
+
+	# http://stevelosh.com/blog/2013/04/git-koans/
+	# Explicit is better than implicit.  If we want to merge
+	# we should do so ourselves.
+	pull = pull --ff-only
 [push]
 	#default = current
 	default = simple
