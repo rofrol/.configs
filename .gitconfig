@@ -3,7 +3,7 @@
 	email = rofrol@gmail.com
 [core]
 	editor = vim
-	excludesfile = ~/projects/.configs/.global_gitignore
+	excludesfile = ~/projects/.configs/.gitignore_global
 	attributesfile = ~/projects/.configs/.gitattributes_global
 [color]
 	ui = true
