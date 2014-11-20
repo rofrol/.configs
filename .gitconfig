@@ -4,6 +4,7 @@
 [core]
 	editor = vim
 	excludesfile = ~/projects/.configs/.global_gitignore
+	attributesfile = ~/projects/.configs/.gitattributes_global
 [color]
 	ui = true
 [alias]
