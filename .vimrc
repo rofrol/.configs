@@ -115,8 +115,11 @@ set nowrapscan
 
 " }}}
 " Vundle {{{
-" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-" https://github.com/gmarik/vundle
+" git clone https://github.com/gmarik/Vundle.git ~/.vim/bundle/vundle
+" on windows
+"   add git to %PATH%
+"   create link to config in home dir (run cmd.exe as admin): cd %HOMEPATH% && mklink _vimrc C:\path\to\.vim
+" VundleInstall
 set nocompatible               " be iMproved
 filetype off                   " required!
 
