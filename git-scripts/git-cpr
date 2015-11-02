@@ -1,3 +1,4 @@
 #!/bin/bash
 
-git cherry-pick --no-commit $1 && git reset
+# http://stackoverflow.com/questions/7751555/how-to-resolve-git-stash-conflict-without-commit/18212891#18212891
+git cherry-pick -X theirs $1; git reset HEAD^
