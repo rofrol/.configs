@@ -1,0 +1,26 @@
+#!/bin/sh -e
+
+if [ -z ${1} ]; then
+	echo "Script to update local branch without switching to it."
+	echo -e "\nUsage:"
+	echo "  git f <branch>           # 'origin' as default remote"
+	echo "  git f <remote> <branch>"
+
+	exit 1;
+fi
+
+if [ -z ${2} ]; then
+	branch=${1}
+	remote="origin"
+else
+	remote=${1}
+	branch=${2}
+fi
+
+git fetch
+ref=$(git symbolic-ref -q HEAD --short)
+if [ $ref == ${branch} ]; then
+	git reset --hard ${remote}/${branch}
+else
+	git fetch ${remote} ${branch}:${branch}
+fi

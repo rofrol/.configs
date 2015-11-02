@@ -31,6 +31,7 @@
 	type = cat-file -t
 	dump = cat-file -p
 	fp = fetch --prune
+    #cpr = !"git cherry-pick --no-commit $1; git reset HEAD"
 
 	# http://stevelosh.com/blog/2013/04/git-koans/
 	# Explicit is better than implicit.  If we want to merge
