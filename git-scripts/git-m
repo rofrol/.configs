@@ -3,17 +3,26 @@
 if [ -z ${1} ]; then
 	echo "Script to update specified branch, rebase on it, checkout to it, merge previous branch, push, delete prev branch on local and origin"
 	echo -e "\nUsage:"
-	echo "  git m <branch>"
+	echo "  git m <branch>           # 'origin' as default remote"
+	echo "  git m <remote> <branch>"
 
 	exit 1;
 fi
 
+if [ -z ${2} ]; then
+	branch=${1}
+	remote="origin"
+else
+	remote=${1}
+	branch=${2}
+fi
+
 prev_branch=$(git symbolic-ref -q HEAD --short)
-branch=${1}
-git f ${branch} && \
+
+git fetch ${remote} ${branch}:${branch}
 git rebase ${branch} && \
 git checkout ${branch}  && \
 git merge ${prev_branch} && \
 git push && \
 git branch -d ${prev_branch} && \
-git push origin --delete ${prev_branch}
+git push ${remote} --delete ${prev_branch}
