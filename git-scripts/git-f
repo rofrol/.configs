@@ -20,7 +20,7 @@ fi
 git fetch
 ref=$(git symbolic-ref -q HEAD --short)
 if [ $ref == ${branch} ]; then
-	git pull --rebase ${remote}/${branch}
+	git pull --rebase
 else
 	git fetch ${remote} ${branch}:${branch}
 fi
