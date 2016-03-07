@@ -22,7 +22,9 @@ prev_branch=$(git symbolic-ref -q HEAD --short)
 git fetch ${remote} ${branch}:${branch}
 git rebase ${branch} && \
 git checkout ${branch}  && \
-git merge ${prev_branch} && \
+git merge --ff-only ${prev_branch} && \
 git push && \
-git branch -d ${prev_branch} && \
-git push ${remote} --delete ${prev_branch}
+git rev-parse --symbolic-full-name --abbrev-ref ${prev_branch}@{u} && git push ${remote} --delete ${prev_branch} && \
+git branch -d ${prev_branch}
+
+# http://serverfault.com/questions/175052/how-to-tell-which-local-branch-is-tracking-which-remote-branch-in-git/384862#384862
