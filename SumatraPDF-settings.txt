@@ -1,22 +1,22 @@
 ﻿# For documentation, see http://blog.kowalczyk.info/software/sumatrapdf/settings3.0.html
 
-MainWindowBackground = #2b3600
+MainWindowBackground = #1B2B34
 EscToExit = false
 ReuseInstance = false
 UseSysColors = false
 
 FixedPageUI [
-	TextColor = #839496
+	TextColor = #D8DEE9
 	BackgroundColor = #002b36
-	SelectionColor = #073642
+	SelectionColor = #1B2B34
 	WindowMargin = 2 4 2 4
 	PageSpacing = 4 4
 ]
 EbookUI [
-	FontName = Georgia
+	FontName = Calibri, sans-serif
 	FontSize = 12.5
-	TextColor = #5f4b32
-	BackgroundColor = #fbf0d9
+	TextColor = #D8DEE9
+	BackgroundColor = #1B2B34
 	UseFixedPageUI = false
 ]
 ComicBookUI [
