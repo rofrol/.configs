@@ -34,9 +34,18 @@ And mozilla
 /connect mozilla
 ----
 
-http://www.weechat.org/files/doc/stable/weechat_quickstart.en.html
+You can also use this for login:
 
-https://wiki.archlinux.org/index.php/WeeChat
+```
+/set irc.server.freenode.sasl_username wikimatze
+/set irc.server.freenode.sasl_password {your password}
+/save
+/reconnect
+```
+
+- http://www.weechat.org/files/doc/stable/weechat_quickstart.en.html
+- https://wiki.archlinux.org/index.php/WeeChat
+- https://gist.github.com/wikimatze/e19a312833b1be881f788ca795880fba
 
 == Keys
 
