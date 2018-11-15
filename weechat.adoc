@@ -27,7 +27,7 @@ And mozilla
 ----
 /server add mozilla irc.mozilla.org/6697 -ssl
 /set irc.server.mozilla.nicks "rofrol"
-/set irc.server.mozilla.autojoin "#rust"
+/set irc.server.mozilla.autojoin "#rust,#rust-beginners"
 /set irc.server.mozilla.autoconnect on
 /set irc.server.mozilla.autoreconnect on
 /save
