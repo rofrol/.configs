@@ -58,6 +58,15 @@ page up/down: scroll text in current buffer
 #to get key binding and representation
 alt+k press key
 
+in tmux:
+alt+pgup/pgdown to scroll
+
+== fset
+
+`/fset autojoin`
+
+to quit press `q` and then `Enter`.
+
 == Ignore
 
 ----
