@@ -58,7 +58,10 @@ page up/down: scroll text in current buffer
 #to get key binding and representation
 alt+k press key
 
+alt+1, alt+2, alt+3, etc. to switch between networks and channels.
+
 in tmux:
+
 alt+pgup/pgdown to scroll
 
 == fset
