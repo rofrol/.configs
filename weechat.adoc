@@ -46,6 +46,8 @@ You can also use this for login:
 - http://www.weechat.org/files/doc/stable/weechat_quickstart.en.html
 - https://wiki.archlinux.org/index.php/WeeChat
 - https://gist.github.com/wikimatze/e19a312833b1be881f788ca795880fba
+- https://weechat.org/files/doc/devel/weechat_faq.en.html#irc_sasl
+- https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer
 
 == Keys
 
